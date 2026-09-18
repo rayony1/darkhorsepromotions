@@ -59,14 +59,8 @@ HEAD = """<!doctype html>
     </div>
   </nav>
 </header>
-{hiring}
 <main id="main">
 """
-
-HIRING = """<div class="hiring">
-  <span><b>Now hiring in West Houston.</b> Sales and key technicians, $600 to $800 a week to start. No experience needed, we train you.</span>
-  <a href="/careers/">See the role</a>
-</div>"""
 
 FOOT = """</main>
 <footer class="pad">
@@ -103,11 +97,6 @@ FOOT = """</main>
 </html>
 """
 
-MARQUEE_ITEMS = ["West Houston","Inside Costco and Sam's Club","Lost key replacement","Key fob programming","Smart key duplication","Broken key extraction","Fob batteries","Done in minutes while you shop","All makes and models","Now hiring"]
-def marquee():
-    a = "".join(f"<span>{i}</span>" for i in MARQUEE_ITEMS)
-    b = "".join(f'<span class="dup">{i}</span>' for i in MARQUEE_ITEMS)
-    return f'<div class="marquee" aria-hidden="true"><div class="marquee-track">{a}{b}</div></div>'
 
 CONSENT = f"""<label class="consent"><input type="checkbox" name="sms_consent" value="yes">
 <span>By submitting this form with your phone number, you agree to receive calls and text messages from Dark Horse Promotions, Inc. about {{purpose}} at the number provided. Consent is not a condition of employment or service. Message and data rates may apply. Reply STOP to opt out. See our <a href="/privacy/">privacy policy</a>.</span></label>"""
@@ -165,7 +154,7 @@ def careers_cta(cls="careers-band"):
       <p>We're a sales and marketing team that learned a trade, and we're hiring people who want to do the same. If you compete, show up, and can talk to anyone, we want you on our side.</p>
       <div class="actions">
         <a class="btn btn-orange" href="/apply/">Apply now</a>
-        <a class="btn btn-line" href="/careers/">Learn about the role</a>
+        <a class="link" href="/careers/">Learn about the role</a>
       </div>
     </div>
   </div>
@@ -181,7 +170,7 @@ FIND_US = f"""<section class="light-2 pad" id="find-us">
       <p>We're set up inside a Costco or Sam's Club on the west side of Houston, and the store changes every week. Call or text and we'll tell you exactly which one and what hours. A club membership is required for service.</p>
       <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.75rem">
         <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
-        <a class="btn btn-line" href="sms:{PHONE_TEL}">Text us</a>
+        <a class="link" href="sms:{PHONE_TEL}">Or text us</a>
       </div>
     </div>
   </div>
@@ -194,33 +183,24 @@ PAGES["/"] = dict(
     body=f"""
 <section class="hero pad">
   <div class="hero-copy">
-    <h1>
-      <span>Learn a trade.</span>
-      <span><i class="rule" aria-hidden="true"></i>Get paid</span>
-      <span>to sell it.</span>
-    </h1>
+    <h1><span>Learn a trade.</span> <span>Get paid</span> <span>to sell it.</span></h1>
     <p>Dark Horse Promotions is a West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. We hire competitors, train them to cut, program, and sell car keys, then train them to lead.</p>
     <div class="hero-actions">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
-      <a class="btn btn-line" href="/careers/">What the job looks like</a>
+      <a class="link" href="/careers/">What the job looks like</a>
     </div>
+    <p class="hero-aside"><b>Need a car key?</b> We're inside a Costco or Sam's Club in West Houston this week, cutting and programming keys while you shop. <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a> for this week's store.</p>
   </div>
   <div class="hero-photo">
     <img src="/img/hero.jpg" alt="Carter Bolser, owner of Dark Horse Promotions" fetchpriority="high">
   </div>
-  <aside class="hero-note">
-    <b>Need a car key?</b>
-    We're inside a Costco or Sam's Club in West Houston this week. Keys cut and programmed while you shop.
-    <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY} for this week's store</a>
-  </aside>
 </section>
-{marquee()}
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">A sales team that learned a trade.</h2>
     <div class="section-body">
       <p>Most sales jobs sell something you can't hold. We sell a car key, cut and programmed in front of the customer, that works before they pay. It's a real skill, it's in demand everywhere, and it's the best sales training there is: a stranger walks up with a problem and walks away happy.</p>
-      <a class="btn btn-line" href="/about/">About the company</a>
+      <a class="link" href="/about/">About the company</a>
     </div>
     <ul class="statements">
       <li><h3>Real trade</h3><p>You learn to cut and program keys for every make and model. That skill is yours for life.</p></li>
@@ -234,17 +214,17 @@ PAGES["/"] = dict(
     <h2 class="section-title">For members: how it works.</h2>
     <p class="section-body">Lost a key or need a spare? Four steps, and most members are done in the time it takes to shop.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>Call for this week's store</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
-      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
-      <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
-      <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
+      <li><div class="n">1</div><h3>Call for this week's store</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
+      <li><div class="n">2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
+      <li><div class="n">3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
+      <li><div class="n">4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
     </ol>
   </div>
 </section>
 <section class="light pad">
   <div class="grid">
-    <h2 class="section-title">On the job.</h2>
-    <p class="section-body">Real work, real people. The team sets up, takes care of members all day, and sends every one of them home with a working key.</p>
+    <h2 class="section-title wide">On the job.</h2>
+    <p class="section-body under">Real work, real people. The team sets up, takes care of members all day, and sends every one of them home with a working key.</p>
     <div class="photos">
       <figure class="big"><img src="/img/p2.jpg" alt="Technician programming a key at the equipment bench"><figcaption>Cutting and programming, done on site</figcaption></figure>
       <figure class="a"><img src="/img/p1.jpg" alt="The Dark Horse Promotions team at an industry event"></figure>
@@ -254,8 +234,8 @@ PAGES["/"] = dict(
 </section>
 <section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">Why people work here.</h2>
-    <p class="section-body">Carter's goal is simple: it should feel like family when you show up every day. That means people who put in effort, back each other up, and want to win.</p>
+    <h2 class="section-title wide">Why people work here.</h2>
+    <p class="section-body under">Carter's goal is simple: it should feel like family when you show up every day. That means people who put in effort, back each other up, and want to win.</p>
     <ul class="claims">
       <li><h3>Paid to learn</h3><p>$600 to $800 a week to start while you train. No experience required.</p></li>
       <li><h3>Home every night</h3><p>Every store is on the west side of Houston, a 20 to 30 minute commute. No travel.</p></li>
@@ -273,7 +253,6 @@ PAGES["/about/"] = dict(
     hiring=True,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">About us</span>
   <h1>We are Dark Horse Promotions.</h1>
   <p>A West Houston sales and marketing firm that learned a trade. We represent Car Keys Express inside Costco and Sam's Club, and we build salespeople into technicians and technicians into leaders.</p>
 </section>
@@ -326,7 +305,6 @@ PAGES["/team/"] = dict(
     hiring=True,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">Team</span>
   <h1>A team that delivers.</h1>
   <p>Behind every successful service is a team dedicated to doing the job right. We don't just replace keys. We restore access, provide peace of mind, and keep you moving forward.</p>
 </section>
@@ -376,7 +354,6 @@ PAGES["/services/"] = dict(
     body=f"""
 <section class="page-hero with-photo pad">
   <div class="ph-copy">
-    <span class="kicker">Services</span>
     <h1>A car key service that fits inside your errands.</h1>
     <p>We represent Car Keys Express inside Costco and Sam's Club on the west side of Houston. Stop by the display, and by the time you've checked out, your new key is cut, programmed, and tested.</p>
     <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
@@ -385,7 +362,6 @@ PAGES["/services/"] = dict(
   </div>
   <div class="ph-img"><img src="/img/p2.jpg" alt="Key programming equipment"></div>
 </section>
-{marquee()}
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Fast service, secure access.</h2>
@@ -404,10 +380,10 @@ PAGES["/services/"] = dict(
     <h2 class="section-title">How it works.</h2>
     <p class="section-body">Four steps, and most members are done in the time it takes to shop.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
-      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
-      <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
-      <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
+      <li><div class="n">1</div><h3>Call for the location</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
+      <li><div class="n">2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
+      <li><div class="n">3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
+      <li><div class="n">4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
     </ol>
   </div>
 </section>
@@ -433,12 +409,11 @@ PAGES["/careers/"] = dict(
     body=f"""
 <section class="page-hero with-photo pad">
   <div class="ph-copy">
-    <span class="kicker">Careers, West Houston</span>
     <h1>Let's unlock your potential.</h1>
     <p>Your ambition has the key. Turn it at Dark Horse Promotions. We hire competitors, teach them a trade, and turn them into leaders.</p>
     <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
-      <a class="btn btn-line" href="#role">What the job looks like</a>
+      <a class="link" href="#role">What the job looks like</a>
     </div>
   </div>
   <div class="ph-img"><img src="/img/p3.jpg" alt="Dark Horse Promotions team members at an industry event"></div>
@@ -470,8 +445,8 @@ PAGES["/careers/"] = dict(
 </section>
 <section class="light pad">
   <div class="grid">
-    <h2 class="section-title">Who does well here.</h2>
-    <p class="section-body">The trade can be taught. These can't. The two things that sink people are lack of effort and being too shy to start a conversation.</p>
+    <h2 class="section-title wide">Who does well here.</h2>
+    <p class="section-body under">The trade can be taught. These can't. The two things that sink people are lack of effort and being too shy to start a conversation.</p>
     <ul class="statements four">
       <li><h3>Competitors</h3><p>Athletes, team captains, anyone who's used to keeping score and hates losing. You'll fit right in.</p></li>
       <li><h3>Outgoing</h3><p>You can walk up to a stranger, start talking, and make them feel taken care of. If that sounds terrifying, this isn't the job.</p></li>
@@ -485,10 +460,10 @@ PAGES["/careers/"] = dict(
     <h2 class="section-title">How hiring works.</h2>
     <p class="section-body">Four steps, and we move quickly. Most people hear back within a couple of days.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>First interview</h3><p>A conversation with Carter about you, the role, pay, and schedule.</p></li>
-      <li><div class="n">Step 2</div><h3>Second interview</h3><p>A deeper look at fit on both sides. Bring your questions.</p></li>
-      <li><div class="n">Step 3</div><h3>Job shadow</h3><p>A day at the display on real jobs so you see the work before you commit.</p></li>
-      <li><div class="n">Step 4</div><h3>Orientation</h3><p>Hands-on training on cutting, programming, and the sale. Then you run your own display.</p></li>
+      <li><div class="n">1</div><h3>First interview</h3><p>A conversation with Carter about you, the role, pay, and schedule.</p></li>
+      <li><div class="n">2</div><h3>Second interview</h3><p>A deeper look at fit on both sides. Bring your questions.</p></li>
+      <li><div class="n">3</div><h3>Job shadow</h3><p>A day at the display on real jobs so you see the work before you commit.</p></li>
+      <li><div class="n">4</div><h3>Orientation</h3><p>Hands-on training on cutting, programming, and the sale. Then you run your own display.</p></li>
     </ol>
   </div>
 </section>
@@ -524,7 +499,6 @@ PAGES["/apply/"] = dict(
     hiring=False,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">Apply</span>
   <h1>Join the drive for success.</h1>
   <p>West Houston. $600 to $800 a week to start. No experience needed. Send your details and Carter will reach out to set up a first interview.</p>
 </section>
@@ -558,7 +532,6 @@ PAGES["/contact/"] = dict(
     hiring=True,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">Contact</span>
   <h1>Your key to more possibilities.</h1>
   <p>Need a key, have a question, or ready to take the next step? Call or text and we'll tell you which club we're in this week.</p>
 </section>
@@ -585,7 +558,6 @@ PAGES["/thanks/"] = dict(
     hiring=False,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">Received</span>
   <h1>Got it. We'll be in touch.</h1>
   <p>Your message is on its way to Carter. If it's urgent, call or text <a href="tel:{PHONE_TEL}" style="text-decoration:underline;text-underline-offset:3px;color:var(--bone)">{PHONE_DISPLAY}</a>.</p>
   <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
@@ -601,7 +573,6 @@ PAGES["/privacy/"] = dict(
     hiring=False,
     body=f"""
 <section class="page-hero pad">
-  <span class="kicker">Privacy</span>
   <h1>Privacy policy.</h1>
   <p>Short version: we use what you send us to get back to you, and we don't sell it.</p>
 </section>
@@ -640,8 +611,7 @@ def nav_html(current):
 
 def render(path, page):
     head = HEAD.format(title=page["title"], desc=page["desc"], site=SITE, path=path,
-                       navlinks=nav_html(path), tel=PHONE_TEL, phone=PHONE_DISPLAY,
-                       hiring=HIRING if page.get("hiring") else "")
+                       navlinks=nav_html(path), tel=PHONE_TEL, phone=PHONE_DISPLAY)
     foot = FOOT.format(tel=PHONE_TEL, phone=PHONE_DISPLAY, email=EMAIL)
     return head + page["body"] + foot
 
