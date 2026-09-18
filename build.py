@@ -64,8 +64,8 @@ HEAD = """<!doctype html>
 """
 
 HIRING = """<div class="hiring">
-  <span><b>We're hiring.</b> Car key technicians for our Sam's Club and Costco locations. No locksmith experience needed, we train you.</span>
-  <a href="/careers/">See what the job looks like</a>
+  <span><b>Now hiring in West Houston.</b> Sales and key technicians, $600 to $800 a week to start. No experience needed, we train you.</span>
+  <a href="/careers/">See the role</a>
 </div>"""
 
 FOOT = """</main>
@@ -73,7 +73,7 @@ FOOT = """</main>
   <div class="foot">
     <div>
       <a class="brand" href="/"><img src="/img/logo-dark.jpg" alt=""><span class="brand-name">Dark Horse<small>Promotions, Inc.</small></span></a>
-      <p>Car key replacement and programming inside Sam's Club and Costco. Call for this week's location. And we're hiring the team that runs them.</p>
+      <p>A West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. Call for this week's store. And we're hiring.</p>
     </div>
     <div>
       <h4>Company</h4>
@@ -91,7 +91,7 @@ FOOT = """</main>
       <h4>Where we are this week</h4>
       <a class="big-link" href="tel:{tel}">{phone}</a>
       <a href="mailto:{email}">{email}</a>
-      <p style="margin-top:.5rem;font-size:.85rem">We set up inside a Sam's Club or Costco for a few weeks at a time. Call or text to find out which one.</p>
+      <p style="margin-top:.5rem;font-size:.85rem">We're inside a Costco or Sam's Club on the west side of Houston. The store changes weekly. Call or text for this week's.</p>
     </div>
   </div>
   <div class="copy">
@@ -103,7 +103,7 @@ FOOT = """</main>
 </html>
 """
 
-MARQUEE_ITEMS = ["Inside Sam's Club and Costco","Lost key replacement","Key fob programming","Smart key duplication","Broken key extraction","Fob batteries","Done in minutes while you shop","All makes and models"]
+MARQUEE_ITEMS = ["West Houston","Inside Costco and Sam's Club","Lost key replacement","Key fob programming","Smart key duplication","Broken key extraction","Fob batteries","Done in minutes while you shop","All makes and models","Now hiring"]
 def marquee():
     a = "".join(f"<span>{i}</span>" for i in MARQUEE_ITEMS)
     b = "".join(f'<span class="dup">{i}</span>' for i in MARQUEE_ITEMS)
@@ -162,7 +162,7 @@ def careers_cta(cls="careers-band"):
   <div class="grid">
     <h2>A future that opens doors.</h2>
     <div class="aside">
-      <p>We're building a team that thrives on challenges and craves growth. If you can talk to anyone, learn fast, and want a trade that pays, we want you on our side.</p>
+      <p>We're a sales and marketing team that learned a trade, and we're hiring people who want to do the same. If you compete, show up, and can talk to anyone, we want you on our side.</p>
       <div class="actions">
         <a class="btn btn-orange" href="/apply/">Apply now</a>
         <a class="btn btn-line" href="/careers/">Learn about the role</a>
@@ -176,9 +176,9 @@ PAGES = {}
 
 FIND_US = f"""<section class="light-2 pad" id="find-us">
   <div class="grid">
-    <h2 class="section-title">Where to find us.</h2>
+    <h2 class="section-title">Where to find us this week.</h2>
     <div class="section-body">
-      <p>We set up inside a Sam's Club or Costco warehouse for a few weeks at a time, then move to the next one. Call or text for this week's location and hours. A club membership is required for service.</p>
+      <p>We're set up inside a Costco or Sam's Club on the west side of Houston, and the store changes every week. Call or text and we'll tell you exactly which one and what hours. A club membership is required for service.</p>
       <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.75rem">
         <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
         <a class="btn btn-line" href="sms:{PHONE_TEL}">Text us</a>
@@ -188,55 +188,54 @@ FIND_US = f"""<section class="light-2 pad" id="find-us">
 </section>"""
 
 PAGES["/"] = dict(
-    title="Dark Horse Promotions, Inc. | Car Key Replacement at Sam's Club and Costco",
-    desc="Dark Horse Promotions replaces and programs car keys inside Sam's Club and Costco while you shop. Call for this week's location. We're also hiring technicians.",
+    title="Dark Horse Promotions, Inc. | West Houston Sales Team and Car Key Service",
+    desc="Dark Horse Promotions is a West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. Now hiring. Need a key? Call for this week's store.",
     hiring=True,
     body=f"""
 <section class="hero pad">
   <div class="hero-copy">
     <h1>
-      <span>Lost your</span>
-      <span>car key?</span>
-      <span><i class="rule" aria-hidden="true"></i>Find us</span>
-      <span>at the club.</span>
+      <span>Learn a trade.</span>
+      <span><i class="rule" aria-hidden="true"></i>Get paid</span>
+      <span>to sell it.</span>
     </h1>
-    <p>Dark Horse Promotions cuts and programs replacement car keys inside Sam's Club and Costco. Stop by while you shop, and leave with a working key in minutes. Every make, every model.</p>
+    <p>Dark Horse Promotions is a West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. We hire competitors, train them to cut, program, and sell car keys, then train them to lead.</p>
     <div class="hero-actions">
-      <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call for this week's location</a>
-      <a class="btn btn-line" href="/services/">How it works</a>
+      <a class="btn btn-orange" href="/apply/">Apply now</a>
+      <a class="btn btn-line" href="/careers/">What the job looks like</a>
     </div>
   </div>
   <div class="hero-photo">
-    <img src="/img/hero.jpg" alt="Carter Bolser standing in the door of the Dark Horse Promotions key service van" fetchpriority="high">
+    <img src="/img/hero.jpg" alt="Carter Bolser, owner of Dark Horse Promotions" fetchpriority="high">
   </div>
   <aside class="hero-note">
-    <b>Now hiring technicians</b>
-    Run a key display inside the biggest warehouse clubs in the country. No locksmith background required.
-    <a href="/careers/">See the role</a>
+    <b>Need a car key?</b>
+    We're inside a Costco or Sam's Club in West Houston this week. Keys cut and programmed while you shop.
+    <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY} for this week's store</a>
   </aside>
 </section>
 {marquee()}
 <section class="light pad">
   <div class="grid">
-    <h2 class="section-title">Unlocking convenience, one key at a time.</h2>
+    <h2 class="section-title">A sales team that learned a trade.</h2>
     <div class="section-body">
-      <p>Dark Horse Promotions, Inc. provides fast, reliable car key replacement and programming at the warehouse clubs you already shop at. Whether you need a spare or lost your only key, we've got you covered, and you're done before your cart is full.</p>
+      <p>Most sales jobs sell something you can't hold. We sell a car key, cut and programmed in front of the customer, that works before they pay. It's a real skill, it's in demand everywhere, and it's the best sales training there is: a stranger walks up with a problem and walks away happy.</p>
       <a class="btn btn-line" href="/about/">About the company</a>
     </div>
     <ul class="statements">
-      <li><h3>Keys while you shop</h3><p>Stop by the display, hand us your vehicle info, and finish your shopping. The key is cut, programmed, and tested at your car in the lot.</p></li>
-      <li><h3>Save against the dealership</h3><p>No appointment, no tow, no dealership markup. Members typically pay far less than the dealer quotes for the same key.</p></li>
-      <li><h3>Fob programming and repairs</h3><p>From reprogramming to battery replacement, your key fob leaves working flawlessly.</p></li>
+      <li><h3>Real trade</h3><p>You learn to cut and program keys for every make and model. That skill is yours for life.</p></li>
+      <li><h3>Real sales</h3><p>Thousands of members walk past the display every day. You start the conversation, find the need, and close it on the spot.</p></li>
+      <li><h3>Real growth</h3><p>Top performers train and develop the next hires. Leadership here is earned by doing, not by waiting.</p></li>
     </ul>
   </div>
 </section>
 <section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">How it works.</h2>
-    <p class="section-body">Four steps, and most members are done in the time it takes to shop.</p>
+    <h2 class="section-title">For members: how it works.</h2>
+    <p class="section-body">Lost a key or need a spare? Four steps, and most members are done in the time it takes to shop.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We rotate between Sam's Club and Costco warehouses. Call or text to find out where we are this week.</p></li>
-      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes.</p></li>
+      <li><div class="n">Step 1</div><h3>Call for this week's store</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
+      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
       <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
       <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
     </ol>
@@ -255,12 +254,12 @@ PAGES["/"] = dict(
 </section>
 <section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">Why members trust us, and why people work here.</h2>
-    <p class="section-body">A lost key is a bad day. We fix it fast, at a fair price, with a technician who knows the vehicle. The same standard applies to how we treat the people on our team.</p>
+    <h2 class="section-title">Why people work here.</h2>
+    <p class="section-body">Carter's goal is simple: it should feel like family when you show up every day. That means people who put in effort, back each other up, and want to win.</p>
     <ul class="claims">
-      <li><h3>Done in minutes</h3><p>Most keys are cut, programmed, and tested before you finish shopping.</p></li>
-      <li><h3>Expert key solutions</h3><p>From replacements to fob programming, we handle all makes and models with precision.</p></li>
-      <li><h3>Member first</h3><p>Straight pricing, no pressure, and a working key before you pay.</p></li>
+      <li><h3>Paid to learn</h3><p>$600 to $800 a week to start while you train. No experience required.</p></li>
+      <li><h3>Home every night</h3><p>Every store is on the west side of Houston, a 20 to 30 minute commute. No travel.</p></li>
+      <li><h3>A path up</h3><p>Learn the trade, master the sale, then train and develop the next people through the door.</p></li>
     </ul>
   </div>
 </section>
@@ -276,14 +275,14 @@ PAGES["/about/"] = dict(
 <section class="page-hero pad">
   <span class="kicker">About us</span>
   <h1>We are Dark Horse Promotions.</h1>
-  <p>When you need a key, we're the ones to call. We bring dealership-quality key replacement into the warehouse clubs you already shop at, at prices that make sense.</p>
+  <p>A West Houston sales and marketing firm that learned a trade. We represent Car Keys Express inside Costco and Sam's Club, and we build salespeople into technicians and technicians into leaders.</p>
 </section>
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Where reliability meets convenience.</h2>
     <div class="section-body">
-      <p>Life moves fast, and so do we. Dark Horse Promotions sets up inside Sam's Club and Costco warehouses, so replacing a lost key or adding a spare is something you do on a grocery run instead of a day off work.</p>
-      <p>The company is led by Carter Bolser. Every job is done on site by a trained technician with the equipment and the key inventory to finish it while you shop.</p>
+      <p>Dark Horse Promotions sets up inside Costco and Sam's Club warehouses on the west side of Houston, so replacing a lost key or adding a spare is something you do on a grocery run instead of a day off work. We represent Car Keys Express, the national leader in on-site key replacement.</p>
+      <p>The company is owned by Carter Bolser, who started as a technician himself. Every job is done on site by a trained team member with the equipment and the key inventory to finish it while you shop.</p>
     </div>
   </div>
 </section>
@@ -340,8 +339,8 @@ PAGES["/team/"] = dict(
       <div>
         <h3>Carter Bolser</h3>
         <span class="role">Owner, Dark Horse Promotions, Inc.</span>
-        <p>Carter runs Dark Horse Promotions and is the technician you're most likely to meet at the display. He built the company around a simple promise: be there, do the job right the first time, and treat every member like a neighbor.</p>
-        <p>He's now hiring and training the next technicians on the team, and he answers the phone himself.</p>
+        <p>Carter found this business the same way most of his team will: an Indeed ad. He started as a technician in Dallas, fell in love with the work, and a year and a half later took the opportunity to move closer to family in Houston and run his own operation.</p>
+        <p>His goal for Dark Horse is that it feels like family when you come to work every day. He still works the display, he still trains every new hire himself, and he still answers the phone.</p>
         <div class="contact-lines">
           <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
           <a href="mailto:{EMAIL}">{EMAIL}</a>
@@ -354,7 +353,7 @@ PAGES["/team/"] = dict(
   <div class="grid">
     <h2 class="section-title">The next name on this page could be yours.</h2>
     <div class="section-body">
-      <p>We're growing, and the team page is short on purpose. We'd rather add people who want to build something than fill seats. If you're driven, dependable, and want to learn a trade that pays, read about the role.</p>
+      <p>We're growing, and the team page is short on purpose. We'd rather add people who want to build something than fill seats. If you compete, put in effort, and want to learn a trade that pays, read about the role.</p>
       <a class="btn btn-orange" href="/careers/">See the role</a>
     </div>
   </div>
@@ -379,7 +378,7 @@ PAGES["/services/"] = dict(
   <div class="ph-copy">
     <span class="kicker">Services</span>
     <h1>A car key service that fits inside your errands.</h1>
-    <p>You're already at the club. Stop by the display, and by the time you've checked out, your new key is cut, programmed, and tested.</p>
+    <p>We represent Car Keys Express inside Costco and Sam's Club on the west side of Houston. Stop by the display, and by the time you've checked out, your new key is cut, programmed, and tested.</p>
     <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
       <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call for this week's location</a>
     </div>
@@ -405,7 +404,7 @@ PAGES["/services/"] = dict(
     <h2 class="section-title">How it works.</h2>
     <p class="section-body">Four steps, and most members are done in the time it takes to shop.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We rotate between Sam's Club and Costco warehouses. Call or text to find out where we are this week.</p></li>
+      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We're in a different West Houston Costco or Sam's Club each week. Call or text to find out which.</p></li>
       <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
       <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
       <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
@@ -428,15 +427,15 @@ PAGES["/services/"] = dict(
 """)
 
 PAGES["/careers/"] = dict(
-    title="Careers | Car Key Technician at Sam's Club and Costco | Dark Horse Promotions, Inc.",
-    desc="Join Dark Horse Promotions as a car key technician running displays inside Sam's Club and Costco. No locksmith experience needed. We train you.",
+    title="Careers | Sales and Key Technician, West Houston | Dark Horse Promotions, Inc.",
+    desc="Join Dark Horse Promotions in West Houston. $600 to $800 a week to start, no experience needed. Learn to cut, program, and sell car keys inside Costco and Sam's Club, then lead.",
     hiring=False,
     body=f"""
 <section class="page-hero with-photo pad">
   <div class="ph-copy">
-    <span class="kicker">Careers</span>
+    <span class="kicker">Careers, West Houston</span>
     <h1>Let's unlock your potential.</h1>
-    <p>Your ambition has the key. Turn it at Dark Horse Promotions. We don't just open doors to opportunity, we help you break them down.</p>
+    <p>Your ambition has the key. Turn it at Dark Horse Promotions. We hire competitors, teach them a trade, and turn them into leaders.</p>
     <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
       <a class="btn btn-line" href="#role">What the job looks like</a>
@@ -448,32 +447,36 @@ PAGES["/careers/"] = dict(
   <div class="grid">
     <h2 class="section-title">Your hustle. Your growth. Your future.</h2>
     <div class="section-body">
-      <p>Our success comes from dedication, determination, and an unstoppable work ethic. We're looking for driven, dependable people to join us. If you love tackling challenges head-on and want to grow personally and professionally, you'll fit right in.</p>
-      <p>You don't need a locksmith background. You need to show up, talk to people, learn fast, and care about the member standing in front of you.</p>
+      <p>Dark Horse Promotions is a sales and marketing firm that learned a trade. We represent Car Keys Express inside Costco and Sam's Club on the west side of Houston, and we're looking for driven, competitive people to join us.</p>
+      <p>You don't need a locksmith background or a sales resume. You need effort, a personality that isn't afraid of strangers, and the drive to get better every day.</p>
     </div>
+    <ul class="statements">
+      <li><h3>$600 to $800 a week</h3><p>To start, while you learn. Pay grows as you do.</p></li>
+      <li><h3>No experience needed</h3><p>We train you on the equipment, the vehicles, and the sale. Coachability matters more than credentials.</p></li>
+      <li><h3>Home every night</h3><p>Every store is in West Houston, a 20 to 30 minute commute. No travel, no hotels.</p></li>
+    </ul>
   </div>
 </section>
 <section id="role" class="dark pad">
   <div class="grid">
     <h2 class="section-title">What the job looks like.</h2>
-    <p class="section-body">You're a car key technician running our display inside a Sam's Club or Costco. Thousands of members walk past you every day, and a lot of them need a key.</p>
+    <p class="section-body">You run our display inside a Costco or Sam's Club. Thousands of members walk past you every day, and a lot of them need a key. The day is three things.</p>
     <ul class="list">
-      <li><h3>Run the display</h3><p>Set up in the morning, keep the display sharp, and be the face of the operation for every member who stops.</p></li>
-      <li><h3>Talk to members</h3><p>Most people don't know a replacement key can be done here. You explain it, look up their vehicle, and quote it on the spot.</p></li>
-      <li><h3>Cut and program keys</h3><p>Using the equipment on site, you cut the key, program the fob or smart key at the member's vehicle, and test it before they leave.</p></li>
-      <li><h3>Move with the show</h3><p>Displays run at a club for a few weeks, then move to the next one. You'll work different clubs, and sometimes travel.</p></li>
+      <li><h3>Cutting and programming</h3><p>You learn to identify, cut, and program keys and fobs for every make and model, at the member's vehicle in the lot, tested before they leave. This is the trade.</p></li>
+      <li><h3>Sales</h3><p>Most people don't know a replacement key can be done at the club. You start the conversation, look up their vehicle, quote it, and close it on the spot. This is the skill.</p></li>
+      <li><h3>Training and developing</h3><p>As you get good, you train the people hired after you. This is the path to leadership, and it starts sooner than you'd think.</p></li>
     </ul>
   </div>
 </section>
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Who does well here.</h2>
-    <p class="section-body">The trade can be taught. These can't.</p>
+    <p class="section-body">The trade can be taught. These can't. The two things that sink people are lack of effort and being too shy to start a conversation.</p>
     <ul class="statements four">
-      <li><h3>People people</h3><p>You're comfortable starting a conversation with a stranger and making them feel taken care of. This is a sales job as much as a technical one.</p></li>
-      <li><h3>Self-starters</h3><p>You'll run the display on your own most days. Nobody is standing over your shoulder, and nobody should need to.</p></li>
-      <li><h3>Problem solvers</h3><p>Every vehicle is a little different. You like figuring things out and finishing what you start.</p></li>
-      <li><h3>Reliable and mobile</h3><p>You show up on time every day the display is open, and you're open to working different clubs and traveling when the show moves.</p></li>
+      <li><h3>Competitors</h3><p>Athletes, team captains, anyone who's used to keeping score and hates losing. You'll fit right in.</p></li>
+      <li><h3>Outgoing</h3><p>You can walk up to a stranger, start talking, and make them feel taken care of. If that sounds terrifying, this isn't the job.</p></li>
+      <li><h3>Effort</h3><p>You show up every day the display is open and you work the whole day. Nobody here coasts.</p></li>
+      <li><h3>Leaders</h3><p>You want to be the person others learn from. We promote from within and we do it fast.</p></li>
     </ul>
   </div>
 </section>
@@ -482,23 +485,23 @@ PAGES["/careers/"] = dict(
     <h2 class="section-title">How hiring works.</h2>
     <p class="section-body">Four steps, and we move quickly. Most people hear back within a couple of days.</p>
     <ol class="steps">
-      <li><div class="n">Step 1</div><h3>Apply</h3><p>Send the short form. A resume helps but isn't required.</p></li>
-      <li><div class="n">Step 2</div><h3>Talk with Carter</h3><p>A phone call to hear your story, answer your questions, and talk about pay and schedule.</p></li>
-      <li><div class="n">Step 3</div><h3>Shadow at the club</h3><p>Spend a day at the display on real jobs so you can see the work before you commit.</p></li>
-      <li><div class="n">Step 4</div><h3>Start training</h3><p>Learn key cutting, programming, and how to talk to members, hands-on, then run your own display.</p></li>
+      <li><div class="n">Step 1</div><h3>First interview</h3><p>A conversation with Carter about you, the role, pay, and schedule.</p></li>
+      <li><div class="n">Step 2</div><h3>Second interview</h3><p>A deeper look at fit on both sides. Bring your questions.</p></li>
+      <li><div class="n">Step 3</div><h3>Job shadow</h3><p>A day at the display on real jobs so you see the work before you commit.</p></li>
+      <li><div class="n">Step 4</div><h3>Orientation</h3><p>Hands-on training on cutting, programming, and the sale. Then you run your own display.</p></li>
     </ol>
   </div>
 </section>
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Questions people ask.</h2>
-    <p class="section-body">Straight answers. Anything else, ask Carter on the call.</p>
+    <p class="section-body">Straight answers. Anything else, ask Carter in the first interview.</p>
     <ul class="list">
-      <li><h3>Do I need locksmith or automotive experience?</h3><p>No. We train you on the equipment and the vehicles. Sales or customer-facing experience helps more than a toolbox.</p></li>
-      <li><h3>Where will I work?</h3><p>Inside Sam's Club and Costco warehouses. Displays run at one club for a few weeks, then move. Ask Carter about the current rotation and how far it reaches.</p></li>
-      <li><h3>What are the hours?</h3><p>Displays are open during club hours, so the schedule follows the roadshow calendar. Carter will walk you through the current schedule.</p></li>
-      <li><h3>Is there travel?</h3><p>Sometimes. When the show moves to a club out of town, so does the team. If you like seeing new places, it's a perk.</p></li>
-      <li><h3>How am I paid?</h3><p>Pay is discussed on the first call. Bring your questions.</p></li>
+      <li><h3>Do I need locksmith or automotive experience?</h3><p>No. We train you on the equipment and the vehicles. Sports, customer-facing work, or anything competitive helps more than a toolbox.</p></li>
+      <li><h3>Where will I work?</h3><p>Inside Costco and Sam's Club stores on the west side of Houston. The store changes weekly, but it's always a 20 to 30 minute commute.</p></li>
+      <li><h3>Is there travel?</h3><p>No. You're home every night.</p></li>
+      <li><h3>How am I paid?</h3><p>$600 to $800 a week to start. Details, including how pay grows with performance, are covered in the first interview.</p></li>
+      <li><h3>What's the culture like?</h3><p>Carter's word for it is family. Small team, everyone knows everyone, and people back each other up. Effort is expected. Ego isn't.</p></li>
     </ul>
   </div>
 </section>
@@ -506,7 +509,7 @@ PAGES["/careers/"] = dict(
   <div class="grid">
     <h2>Ready to take the wheel?</h2>
     <div class="aside">
-      <p>Your next opportunity is a few steps away. Send your details and Carter will reach out. Or skip the form and call or text <a href="tel:{PHONE_TEL}" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">{PHONE_DISPLAY}</a>.</p>
+      <p>Send your details and Carter will reach out to set up a first interview. Or skip the form and call or text <a href="tel:{PHONE_TEL}" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">{PHONE_DISPLAY}</a>.</p>
       <div class="actions">
         <a class="btn btn-orange" href="/apply/">Apply now</a>
       </div>
@@ -523,7 +526,7 @@ PAGES["/apply/"] = dict(
 <section class="page-hero pad">
   <span class="kicker">Apply</span>
   <h1>Join the drive for success.</h1>
-  <p>Ready to take the wheel on a rewarding career? Become part of Dark Horse Promotions and help members walk out of the club with a working key.</p>
+  <p>West Houston. $600 to $800 a week to start. No experience needed. Send your details and Carter will reach out to set up a first interview.</p>
 </section>
 <section class="light pad">
   <div class="grid">

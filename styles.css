@@ -28,7 +28,7 @@ ul,ol{list-style:none}
 .skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:var(--ink);padding:.5rem 1rem;z-index:100}
 .skip:focus{left:8px}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:54px;padding:0 1.6rem;font-weight:600;font-size:1rem;border-radius:4px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:background .18s,color .18s,border-color .18s}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:54px;padding:0 1.6rem;font-weight:600;font-size:1rem;border-radius:4px;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:background .18s,color .18s,border-color .18s}
 .btn-orange{background:var(--orange);color:var(--ink)}
 .btn-orange:hover{background:var(--orange-deep);color:var(--white)}
 .btn-line{border-color:currentColor;background:transparent;color:inherit}
@@ -59,7 +59,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
   .nav-phone{display:none}
   .menu-btn{display:grid;place-items:center}
 }
-@media(max-width:600px){.nav-right .btn{padding:0 1rem;min-height:42px;font-size:.92rem}}
+@media(max-width:600px){.nav-right{gap:.6rem}.nav-right .btn{padding:0 1rem;min-height:42px;font-size:.92rem}.brand{gap:.6rem}.brand img{width:44px;height:44px}.brand-name{font-size:.95rem;white-space:nowrap}.brand-name small{font-size:.66rem}}
 
 /* ---------- hiring strip ---------- */
 .hiring{background:var(--orange);color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem var(--pad);font-weight:600;font-size:.95rem;border-bottom:1px solid var(--orange-deep)}
