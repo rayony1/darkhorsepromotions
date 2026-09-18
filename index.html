@@ -3,189 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dark Horse Promotions, Inc. — Mobile Car Key Service</title>
-<meta name="description" content="Dark Horse Promotions, Inc. replaces, cuts, and programs car keys on the spot, wherever you are. Fast, reliable mobile car key service for every make and model.">
-<link rel="icon" href="img/logo-horse.jpg">
+<title>Dark Horse Promotions, Inc. | Mobile Car Key Service and Careers</title>
+<meta name="description" content="Dark Horse Promotions cuts, replaces, and programs car keys on the spot, wherever you are. We're also hiring mobile car key technicians.">
+<link rel="canonical" href="https://darkhorsepromotions.com/">
+<meta property="og:title" content="Dark Horse Promotions, Inc. | Mobile Car Key Service and Careers">
+<meta property="og:description" content="Dark Horse Promotions cuts, replaces, and programs car keys on the spot, wherever you are. We're also hiring mobile car key technicians.">
+<meta property="og:image" content="https://darkhorsepromotions.com/img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/img/logo-horse.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0e0f12;        /* near-black, slightly warm */
-  --graphite:#1b1d22;
-  --bone:#f3efe7;       /* light ground */
-  --bone-2:#e9e3d8;
-  --steel:#8d94a1;
-  --orange:#f26b1d;     /* brand orange from the horse mark */
-  --orange-deep:#c9530f;
-  --white:#fff;
-  --measure:62ch;
-  --pad:clamp(20px,5vw,72px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{font-family:Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100;background:var(--ink);color:var(--bone);line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
-h1,h2,h3{line-height:1;letter-spacing:-.035em;font-weight:800}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-ul{list-style:none}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.pad{padding-inline:var(--pad)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(16px,2vw,32px)}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:54px;padding:0 1.6rem;font-weight:600;font-size:1rem;border-radius:4px;border:1.5px solid transparent;transition:background .18s,color .18s,border-color .18s}
-.btn-orange{background:var(--orange);color:var(--ink)}
-.btn-orange:hover{background:var(--orange-deep);color:var(--white)}
-.btn-line{border-color:currentColor}
-.btn-line:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
-.dark .btn-line:hover{background:var(--bone);color:var(--ink)}
-.light .btn-line:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
-
-/* ---------- nav (light band over a dark hero) ---------- */
-header{background:var(--bone);color:var(--ink);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--bone-2)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.brand{display:flex;align-items:center;gap:.9rem}
-.brand img{width:56px;height:56px;object-fit:cover;mix-blend-mode:multiply}
-.brand-name{line-height:1.05;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
-.brand-name small{display:block;font-weight:500;font-size:.72rem;letter-spacing:.02em;color:#5b606b}
-.nav-links{display:flex;gap:2.2rem;font-weight:500;font-size:.95rem}
-.nav-links a{position:relative;padding:.25rem 0}
-.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--orange);transition:right .2s}
-.nav-links a:hover::after{right:0}
-.nav-cta .btn{min-height:46px}
-@media(max-width:900px){.nav-links{display:none}}
-
-/* ---------- hero ---------- */
-.hero{background:var(--ink);position:relative;min-height:min(92vh,880px);display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(16px,2vw,32px);align-items:end;overflow:hidden}
-.hero-copy{grid-column:1/8;padding:clamp(56px,9vh,120px) 0 clamp(48px,7vh,88px);position:relative;z-index:2}
-.hero h1{font-size:clamp(3.4rem,9.2vw,9rem);font-variation-settings:"wdth" 88;text-transform:uppercase;letter-spacing:-.04em;line-height:.9}
-.hero h1 span{display:block}
-.hero h1 .rule{display:inline-block;width:.55em;height:.08em;background:var(--orange);vertical-align:.32em;margin-right:.18em}
-.hero p{margin-top:2rem;max-width:44ch;font-size:clamp(1.05rem,1.35vw,1.3rem);color:#c9c4ba;font-weight:400}
-.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.25rem}
-.hero-photo{grid-column:8/13;align-self:stretch;position:relative;min-height:420px}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 25%}
-.hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(14,15,18,0) 28%),linear-gradient(0deg,var(--ink) 0%,rgba(14,15,18,0) 30%);z-index:1;pointer-events:none}
-.hero-photo::after{content:"";position:absolute;left:0;top:12%;bottom:12%;width:6px;background:var(--orange);z-index:2}
-.hero-note{position:absolute;right:var(--pad);bottom:clamp(28px,5vh,56px);z-index:3;background:var(--bone);color:var(--ink);padding:1rem 1.2rem;max-width:280px;border-radius:4px;font-size:.92rem;line-height:1.4;box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
-.hero-note b{display:block;font-weight:700;margin-bottom:.15rem}
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:0;align-items:start}
-  .hero-copy{grid-column:1;padding:48px 0 32px}
-  .hero-photo{grid-column:1;min-height:60vw;margin-inline:calc(-1*var(--pad))}
-  .hero-photo::before{background:linear-gradient(0deg,var(--ink) 0%,rgba(14,15,18,0) 35%)}
-  .hero-photo::after{left:var(--pad)}
-  .hero-note{position:static;margin:-48px var(--pad) 40px auto;display:block;max-width:100%}
-}
-
-/* ---------- marquee ---------- */
-.marquee{background:var(--orange);color:var(--ink);overflow:hidden;border-block:1px solid var(--orange-deep);padding:.9rem 0;font-weight:700;font-size:1rem;letter-spacing:-.01em;white-space:nowrap}
-.marquee-track{display:inline-flex;gap:2.5rem;animation:slide 38s linear infinite;will-change:transform}
-.marquee-track span::before{content:"";display:inline-block;width:.55em;height:.55em;background:var(--ink);transform:rotate(45deg);margin-right:2.5rem;vertical-align:.05em}
-@keyframes slide{to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.marquee{white-space:normal}.marquee-track{display:flex;flex-wrap:wrap;gap:1rem 2rem;padding-inline:var(--pad)}.marquee-track span::before{margin-right:.75rem}.marquee-track .dup{display:none}}
-
-/* ---------- sections ---------- */
-section{padding-block:clamp(72px,10vw,140px)}
-.light{background:var(--bone);color:var(--ink)}
-.dark{background:var(--ink);color:var(--bone)}
-.section-title{grid-column:1/6;font-size:clamp(2.2rem,4.4vw,4rem);letter-spacing:-.04em}
-.section-body{grid-column:6/13;max-width:var(--measure);font-size:clamp(1.05rem,1.25vw,1.2rem);color:#4a4f59}
-.dark .section-body{color:#b9b3a8}
-@media(max-width:900px){.section-title,.section-body{grid-column:1/-1}.section-body{margin-top:1.25rem}}
-
-/* about: three statements, not cards */
-.statements{grid-column:1/-1;margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--ink)}
-.statements li{padding:1.75rem 1.5rem 2rem 0;border-right:1px solid var(--bone-2)}
-.statements li:last-child{border-right:0}
-.statements li+li{padding-left:1.5rem}
-.statements h3{font-size:1.35rem;letter-spacing:-.02em;line-height:1.15;margin-bottom:.7rem}
-.statements p{color:#4a4f59;font-size:1rem;max-width:34ch}
-@media(max-width:900px){.statements{grid-template-columns:1fr}.statements li,.statements li+li{border-right:0;border-bottom:1px solid var(--bone-2);padding-left:0}.statements li:last-child{border-bottom:0}}
-
-/* services: editorial list */
-.services{grid-column:1/-1;margin-top:clamp(40px,6vw,80px)}
-.services li{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;padding:1.6rem 0;border-top:1px solid rgba(243,239,231,.14);align-items:baseline}
-.services li:last-child{border-bottom:1px solid rgba(243,239,231,.14)}
-.services h3{font-size:clamp(1.4rem,2.2vw,2rem);letter-spacing:-.03em;font-weight:700}
-.services p{color:#b9b3a8;max-width:56ch}
-@media(max-width:700px){.services li{grid-template-columns:1fr;gap:.5rem}}
-
-/* photos: asymmetric */
-.photos{grid-column:1/-1;margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.5vw,24px)}
-.photos figure{position:relative;overflow:hidden;background:var(--bone-2)}
-.photos img{width:100%;height:100%;object-fit:cover}
-.photos .big{grid-column:1/8;aspect-ratio:4/3}
-.photos .a{grid-column:8/13;aspect-ratio:4/3}
-.photos .b{grid-column:8/13;aspect-ratio:4/3}
-.photos .big{grid-row:1/3;aspect-ratio:auto}
-.photos figcaption{position:absolute;left:0;bottom:0;background:var(--bone);color:var(--ink);font-size:.85rem;font-weight:600;padding:.45rem .7rem}
-@media(max-width:900px){.photos .big,.photos .a,.photos .b{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}}
-
-/* why: big claims with a rule */
-.claims{grid-column:1/-1;margin-top:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px)}
-.claims li{border-left:4px solid var(--orange);padding-left:1.25rem}
-.claims h3{font-size:clamp(1.6rem,2.6vw,2.4rem);letter-spacing:-.03em;margin-bottom:.75rem}
-.claims p{color:#b9b3a8;max-width:36ch}
-@media(max-width:900px){.claims{grid-template-columns:1fr}}
-
-/* careers */
-.careers{background:var(--bone-2);color:var(--ink)}
-.careers .grid{align-items:end}
-.careers h2{grid-column:1/8;font-size:clamp(2.6rem,6vw,5.6rem);letter-spacing:-.045em;line-height:.95;font-variation-settings:"wdth" 92}
-.careers .aside{grid-column:8/13;max-width:44ch;font-size:1.1rem;color:#3d424c}
-.careers .aside .btn{margin-top:1.75rem}
-@media(max-width:900px){.careers h2,.careers .aside{grid-column:1/-1}.careers .aside{margin-top:1.5rem}}
-
-/* contact */
-.contact-title{grid-column:1/7}
-.contact-title h2{font-size:clamp(2.6rem,6vw,5.6rem);letter-spacing:-.045em;line-height:.95;font-variation-settings:"wdth" 92}
-.contact-title p{margin-top:1.5rem;max-width:40ch;color:#b9b3a8;font-size:1.1rem}
-.form{grid-column:7/13;display:grid;gap:1.6rem;align-content:start}
-.field{display:grid;gap:.4rem}
-.field label{font-size:.85rem;font-weight:600;color:#b9b3a8}
-.field input,.field textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid rgba(243,239,231,.3);color:var(--bone);padding:.7rem 0;font:inherit;font-size:1.05rem;border-radius:0;transition:border-color .18s}
-.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--orange)}
-.field textarea{min-height:96px;resize:vertical}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
-.form .btn{justify-self:start;margin-top:.5rem}
-@media(max-width:900px){.contact-title,.form{grid-column:1/-1}.form{margin-top:2.5rem}}
-@media(max-width:600px){.two{grid-template-columns:1fr}}
-
-/* footer */
-footer{background:var(--ink);color:#b9b3a8;border-top:1px solid rgba(243,239,231,.12);padding-block:48px 28px;font-size:.92rem}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
-.foot .brand img{mix-blend-mode:normal;border-radius:2px}
-.foot .brand-name{color:var(--bone)}
-.foot .brand-name small{color:#8d94a1}
-.foot h4{color:var(--bone);font-weight:700;margin-bottom:.8rem}
-.foot a{display:block;margin-bottom:.45rem}
-.foot a:hover{color:var(--orange)}
-.copy{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(243,239,231,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.82rem}
-@media(max-width:800px){.foot{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
-<header>
+<a class="skip" href="#main">Skip to content</a>
+<header id="header">
   <nav class="pad">
-    <a class="brand" href="#top" aria-label="Dark Horse Promotions home">
-      <img src="img/logo-horse.jpg" alt="">
+    <a class="brand" href="/" aria-label="Dark Horse Promotions home">
+      <img src="/img/logo-horse.jpg" alt="">
       <span class="brand-name">Dark Horse<small>Promotions, Inc.</small></span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why us</a></li>
-      <li><a href="#careers">Careers</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li><a href="/contact/">Contact</a></li>
     </ul>
-    <div class="nav-cta"><a class="btn btn-orange" href="#contact">Get help now</a></div>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+14092257079">(409) 225-7079</a>
+      <a class="btn btn-orange" href="/apply/">Apply now</a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" onclick="var h=document.getElementById('header');var o=h.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </nav>
 </header>
-
-<main id="top">
+<div class="hiring">
+  <span><b>We're hiring.</b> Mobile car key technicians, no locksmith experience needed. We train you on the road.</span>
+  <a href="/careers/">See what the job looks like</a>
+</div>
+<main id="main">
 
 <section class="hero pad">
   <div class="hero-copy">
@@ -197,148 +57,111 @@ footer{background:var(--ink);color:#b9b3a8;border-top:1px solid rgba(243,239,231
     </h1>
     <p>Dark Horse Promotions cuts, replaces, and programs car keys on the spot, wherever you're stranded. Every make, every model, same day.</p>
     <div class="hero-actions">
-      <a class="btn btn-orange" href="#contact">Request service</a>
-      <a class="btn btn-line" href="#services">What we do</a>
+      <a class="btn btn-orange" href="/contact/">Request service</a>
+      <a class="btn btn-line" href="/services/">What we do</a>
     </div>
   </div>
   <div class="hero-photo">
-    <img src="img/hero.jpg" alt="Dark Horse Promotions technician standing in the door of the mobile key van" fetchpriority="high">
+    <img src="/img/hero.jpg" alt="Carter Bolser standing in the door of the Dark Horse Promotions mobile key van" fetchpriority="high">
   </div>
   <aside class="hero-note">
-    <b>A workshop on wheels</b>
-    The van carries the cutting and programming equipment. Nothing gets towed to a dealership.
+    <b>Now hiring technicians</b>
+    Drive, learn a real trade, and get paid to keep people moving. No locksmith background required.
+    <a href="/careers/">See the role</a>
   </aside>
 </section>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Lost key replacement</span><span>Key fob programming</span><span>Smart key duplication</span><span>Broken key extraction</span><span>Ignition repair</span><span>Fob batteries</span><span>Emergency lockouts</span><span>All makes and models</span>
-    <span class="dup">Lost key replacement</span><span class="dup">Key fob programming</span><span class="dup">Smart key duplication</span><span class="dup">Broken key extraction</span><span class="dup">Ignition repair</span><span class="dup">Fob batteries</span><span class="dup">Emergency lockouts</span><span class="dup">All makes and models</span>
-  </div>
-</div>
-
-<section id="about" class="light pad">
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Lost key replacement</span><span>Key fob programming</span><span>Smart key duplication</span><span>Broken key extraction</span><span>Ignition repair</span><span>Fob batteries</span><span>Emergency lockouts</span><span>All makes and models</span><span class="dup">Lost key replacement</span><span class="dup">Key fob programming</span><span class="dup">Smart key duplication</span><span class="dup">Broken key extraction</span><span class="dup">Ignition repair</span><span class="dup">Fob batteries</span><span class="dup">Emergency lockouts</span><span class="dup">All makes and models</span></div></div>
+<section class="light pad">
   <div class="grid">
     <h2 class="section-title">Unlocking convenience, one key at a time.</h2>
-    <p class="section-body">Dark Horse Promotions, Inc. provides fast, reliable mobile car key solutions. Whether you need a key replacement or advanced programming, we've got you covered, and we do it where your car is parked.</p>
+    <div class="section-body">
+      <p>Dark Horse Promotions, Inc. provides fast, reliable mobile car key solutions. Whether you need a key replacement or advanced programming, we've got you covered, and we do it where your car is parked.</p>
+      <a class="btn btn-line" href="/about/">About the company</a>
+    </div>
     <ul class="statements">
-      <li>
-        <h3>Convenient key replacements</h3>
-        <p>Lost or broken key? We cut and program a new one wherever you are, so you're not waiting on a tow or a dealership appointment.</p>
-      </li>
-      <li>
-        <h3>Cost-effective rates</h3>
-        <p>Mobile service saves you more than most dealerships charge. Expert work at a fraction of the cost.</p>
-      </li>
-      <li>
-        <h3>Fob programming and repairs</h3>
-        <p>From reprogramming to battery replacement, your key fob leaves working flawlessly so you can get back on the road.</p>
-      </li>
+      <li><h3>Convenient key replacements</h3><p>Lost or broken key? We cut and program a new one wherever you are, so you're not waiting on a tow or a dealership appointment.</p></li>
+      <li><h3>Cost-effective rates</h3><p>Mobile service saves you more than most dealerships charge. Expert work at a fraction of the cost.</p></li>
+      <li><h3>Fob programming and repairs</h3><p>From reprogramming to battery replacement, your key fob leaves working flawlessly so you can get back on the road.</p></li>
     </ul>
   </div>
 </section>
-
-<section id="services" class="dark pad">
+<section class="dark pad">
   <div class="grid">
     <h2 class="section-title">Everything your key needs, on site.</h2>
-    <p class="section-body">A fully equipped mobile workshop pulls up to you. Cutting, programming, and repairs are all done on the spot, usually the same day you call.</p>
-    <ul class="services">
+    <div class="section-body">
+      <p>A fully equipped mobile workshop pulls up to you. Cutting, programming, and repairs are all done on the spot, usually the same day you call.</p>
+      <a class="btn btn-line" href="/services/">All services</a>
+    </div>
+    <ul class="list">
       <li><h3>Lost key replacement</h3><p>No original needed. We cut a new key from your vehicle's specification and program it to the car.</p></li>
       <li><h3>Key fob and smart key programming</h3><p>Push-to-start, proximity, and remote fobs for domestic and import vehicles.</p></li>
-      <li><h3>Spare key duplication</h3><p>A second key now costs far less than a replacement later. We recommend every driver keeps one.</p></li>
-      <li><h3>Broken key extraction and ignition repair</h3><p>Snapped keys pulled from doors and ignitions, and worn ignitions repaired without replacing the whole assembly.</p></li>
-      <li><h3>Fob repair and batteries</h3><p>Dead buttons, cracked shells, and low batteries fixed while you wait.</p></li>
+      <li><h3>Broken key extraction and ignition repair</h3><p>Snapped keys pulled from doors and ignitions, and worn ignitions repaired in place.</p></li>
       <li><h3>Emergency lockouts</h3><p>Locked out with the keys inside? We open the vehicle without damage.</p></li>
     </ul>
   </div>
 </section>
-
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">On the job.</h2>
     <p class="section-body">Real work, real people. The team shows up in the van, does the job right, and leaves you holding a working key.</p>
     <div class="photos">
-      <figure class="big"><img src="img/p2.jpg" alt="Technician programming a key at the bench"><figcaption>Cutting and programming, done in the van</figcaption></figure>
-      <figure class="a"><img src="img/p1.jpg" alt="The Dark Horse Promotions team at an industry event"></figure>
-      <figure class="b"><img src="img/p3.jpg" alt="The team at a trade show"></figure>
+      <figure class="big"><img src="/img/p2.jpg" alt="Technician programming a key at the bench inside the van"><figcaption>Cutting and programming, done in the van</figcaption></figure>
+      <figure class="a"><img src="/img/p1.jpg" alt="The Dark Horse Promotions team at an industry event"></figure>
+      <figure class="b"><img src="/img/p3.jpg" alt="The team at a trade show"></figure>
     </div>
   </div>
 </section>
-
-<section id="why" class="dark pad">
+<section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">Always ready to respond.</h2>
-    <p class="section-body">When you're stranded, you need a car key service that shows up fast and gets it right the first time. That's the whole job.</p>
+    <h2 class="section-title">Why people call us, and why people work here.</h2>
+    <p class="section-body">When you're stranded, you need a car key service that shows up fast and gets it right the first time. The same standard applies to how we treat the people on our team.</p>
     <ul class="claims">
-      <li>
-        <h3>Rapid mobile response</h3>
-        <p>We come to you, wherever you may be, so you're never stranded for long.</p>
-      </li>
-      <li>
-        <h3>Expert key solutions</h3>
-        <p>From replacements to fob programming, we handle all makes and models with precision.</p>
-      </li>
-      <li>
-        <h3>Customer first</h3>
-        <p>We prioritize convenience and security because your time and satisfaction matter.</p>
-      </li>
+      <li><h3>Rapid mobile response</h3><p>We come to you, wherever you may be, so you're never stranded for long.</p></li>
+      <li><h3>Expert key solutions</h3><p>From replacements to fob programming, we handle all makes and models with precision.</p></li>
+      <li><h3>Customer first</h3><p>We prioritize convenience and security because your time and satisfaction matter.</p></li>
     </ul>
   </div>
 </section>
-
-<section id="careers" class="careers pad">
+<section class="careers-band pad">
   <div class="grid">
     <h2>A future that opens doors.</h2>
     <div class="aside">
       <p>We're building a team that thrives on challenges and craves growth. If you're ready to roll up your sleeves and make an impact in a fast-paced industry, we want you on our side.</p>
-      <a class="btn btn-line" href="#contact">Ask about joining the team</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="dark pad">
-  <div class="grid">
-    <div class="contact-title">
-      <h2>Let's turn the key.</h2>
-      <p>Tell us where you are and what you drive. We'll confirm a time and come to you.</p>
-    </div>
-    <form class="form" action="https://formsubmit.co/CONTACT_EMAIL_HERE" method="POST">
-      <div class="two">
-        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="actions">
+        <a class="btn btn-orange" href="/apply/">Apply now</a>
+        <a class="btn btn-line" href="/careers/">Learn about the role</a>
       </div>
-      <div class="field"><label for="f-vehicle">Vehicle</label><input id="f-vehicle" name="vehicle" placeholder="Year, make, model"></div>
-      <div class="field"><label for="f-msg">What do you need?</label><textarea id="f-msg" name="message" placeholder="Where you are and what happened"></textarea></div>
-      <input type="hidden" name="_subject" value="New request from darkhorsepromotions.com">
-      <input type="hidden" name="_captcha" value="false">
-      <button class="btn btn-orange" type="submit">Send request</button>
-    </form>
+    </div>
   </div>
 </section>
 </main>
-
 <footer class="pad">
   <div class="foot">
     <div>
-      <a class="brand" href="#top" style="margin-bottom:1rem"><img src="img/logo-dark.jpg" alt=""><span class="brand-name">Dark Horse<small>Promotions, Inc.</small></span></a>
-      <p>Mobile car key replacement, programming, and repair. We come to you.</p>
+      <a class="brand" href="/"><img src="/img/logo-dark.jpg" alt=""><span class="brand-name">Dark Horse<small>Promotions, Inc.</small></span></a>
+      <p>Mobile car key replacement, programming, and repair. We come to you. And we're building a team that does the same.</p>
     </div>
     <div>
-      <h4>Site</h4>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why us</a>
-      <a href="#careers">Careers</a>
+      <h4>Company</h4>
+      <a href="/about/">About</a>
+      <a href="/team/">Team</a>
+      <a href="/services/">Services</a>
     </div>
     <div>
-      <h4>Contact</h4>
-      <a href="#contact">Request service</a>
-      <a href="https://darkhorsepromotions.com">darkhorsepromotions.com</a>
+      <h4>Work with us</h4>
+      <a href="/careers/">Careers</a>
+      <a href="/apply/">Apply</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div>
+      <h4>Reach Carter</h4>
+      <a class="big-link" href="tel:+14092257079">(409) 225-7079</a>
+      <a href="mailto:carterscarkeys@gmail.com">carterscarkeys@gmail.com</a>
     </div>
   </div>
   <div class="copy">
     <span>© 2026 Dark Horse Promotions, Inc. All rights reserved.</span>
-    <span>Mobile car key service</span>
+    <a href="/privacy/">Privacy policy</a>
   </div>
 </footer>
 </body>
