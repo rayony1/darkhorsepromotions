@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Horse Promotions, Inc. — Mobile Car Key Service</title>
+<meta name="description" content="Dark Horse Promotions, Inc. provides fast, reliable, on-the-spot mobile car key replacement, programming, and repairs. We come to you.">
+<link rel="icon" href="img/logo-horse.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12;--bg2:#12151d;--card:#171b25;--line:rgba(255,255,255,.08);
+  --text:#f2f4f8;--muted:#a3abbd;--orange:#ff6a13;--orange2:#ff8a3d;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:-.02em;line-height:1.1}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:600;transition:.2s;border:1px solid transparent}
+.btn-primary{background:var(--orange);color:#0b0d12}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(255,255,255,.18);color:var(--text)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.75rem;font-family:Sora;font-weight:800;font-size:1.05rem}
+.brand img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.brand span small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.2em;color:var(--muted)}
+.links{display:flex;gap:2rem;font-size:.92rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.nav-cta{display:flex;gap:.75rem;align-items:center}
+@media(max-width:860px){.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding:96px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(60% 50% at 70% 30%,rgba(255,106,19,.22),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem);font-weight:800;margin:1rem 0 1.25rem}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:56ch}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.hero-stats{display:flex;gap:2.5rem;margin-top:2.75rem;flex-wrap:wrap}
+.hero-stats b{display:block;font-family:Sora;font-size:1.6rem}
+.hero-stats span{color:var(--muted);font-size:.85rem}
+.hero-img{position:relative}
+.hero-img img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;object-position:60% 30%;box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.hero-badge{position:absolute;left:-22px;bottom:34px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:.9rem 1.1rem;display:flex;gap:.8rem;align-items:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.8)}
+.hero-badge img{width:48px;height:48px;border-radius:10px;object-fit:cover;aspect-ratio:1}
+.hero-badge b{display:block;font-family:Sora}
+.hero-badge span{font-size:.8rem;color:var(--muted)}
+@media(max-width:900px){.hero{padding:56px 0 48px}.hero-grid{grid-template-columns:1fr}.hero-img img{aspect-ratio:4/3}.hero-badge{left:16px}}
+
+/* sections */
+section{padding:96px 0}
+.section-head{max-width:64ch;margin-bottom:3rem}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;margin:.75rem 0 1rem}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:.25s}
+.card:hover{border-color:rgba(255,106,19,.5);transform:translateY(-3px)}
+.icon{width:48px;height:48px;border-radius:12px;background:rgba(255,106,19,.12);display:grid;place-items:center;color:var(--orange);margin-bottom:1.25rem}
+.icon svg{width:24px;height:24px}
+.card h3{font-size:1.2rem;margin-bottom:.6rem}
+.card p{color:var(--muted);font-size:.97rem}
+@media(max-width:900px){.cards{grid-template-columns:1fr}section{padding:64px 0}}
+
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:24px;aspect-ratio:4/3;object-fit:cover}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.gallery img{border-radius:16px;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:900px){.split{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}}
+
+.careers{background:linear-gradient(135deg,#1a1f2b,#0f1219);border:1px solid var(--line);border-radius:28px;padding:3.5rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;position:relative;overflow:hidden}
+.careers::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,19,.25),transparent 70%)}
+.careers h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin:.75rem 0 1rem}
+.careers p{color:var(--muted)}
+.careers .actions{justify-self:end}
+@media(max-width:900px){.careers{grid-template-columns:1fr;padding:2.25rem}.careers .actions{justify-self:start}}
+
+.cta{text-align:center;padding:120px 0}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin:.75rem 0 1rem}
+.cta p{color:var(--muted);max-width:60ch;margin:0 auto 2.25rem;font-size:1.1rem}
+.cta .actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:56px 0 28px;color:var(--muted);font-size:.92rem}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.foot h4{color:var(--text);font-family:Sora;margin-bottom:.9rem}
+.foot a{display:block;margin-bottom:.5rem}
+.foot a:hover{color:var(--orange)}
+.copy{border-top:1px solid var(--line);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.82rem}
+@media(max-width:800px){.foot{grid-template-columns:1fr}}
+
+/* contact form */
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;display:grid;gap:1rem;max-width:560px;margin:0 auto;text-align:left}
+.form input,.form textarea{width:100%;background:#0f1219;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:.9rem 1rem;font:inherit}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--orange)}
+.form textarea{min-height:110px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">
+      <img src="img/logo-horse.jpg" alt="Dark Horse Promotions logo">
+      <span>DARK HORSE<small>PROMOTIONS, INC.</small></span>
+    </a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact">Get Help Now</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Mobile Car Key Service</div>
+      <h1>The Dark Horse of <em>Car Keys.</em></h1>
+      <p class="lead">Fast, reliable, on-the-spot key replacements, programming, and repairs, wherever you need us. We come to you, so you're back on the road in no time.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Get Help Now</a>
+        <a class="btn btn-ghost" href="#services">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>Mobile</b><span>We come to you</span></div>
+        <div><b>All Makes</b><span>Every model, every fob</span></div>
+        <div><b>Same Day</b><span>On-the-spot service</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/hero.jpg" alt="Dark Horse Promotions technician at the mobile service van">
+      <div class="hero-badge">
+        <img src="img/logo-dark.jpg" alt="">
+        <div><b>Dark Horse Promotions</b><span>Licensed &amp; ready to roll</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About Us</div>
+      <h2>Unlocking Convenience, One Key at a Time.</h2>
+      <p>Dark Horse Promotions, Inc. provides fast, reliable mobile car key solutions. Whether you need a key replacement or require advanced programming, we've got you covered.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15 19 4M18 5l2 2M15 8l2 2"/></svg></div>
+        <h3>Convenient Key Replacements</h3>
+        <p>Lost or broken key? We provide immediate key cutting and programming wherever you are, for flexibility and peace of mind.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Cost-Effective Rates</h3>
+        <p>With our affordable mobile key services, you can save more than most dealerships. Expert solutions at a fraction of the cost.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><circle cx="12" cy="9" r="1.5"/><circle cx="12" cy="15" r="1.5"/></svg></div>
+        <h3>Key Fob Programming &amp; Repairs</h3>
+        <p>From reprogramming to battery replacements, we make sure your key fob works flawlessly so you can get back on the road without delay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Services</div>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.75rem 0 1rem">Everything Your Key Needs. On Site.</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem">A fully equipped mobile workshop pulls up to you. Cutting, programming, and repairs are all done on the spot.</p>
+        <ul style="display:grid;gap:.75rem;list-style:none">
+          <li>✔&nbsp; Lost key replacement, all makes and models</li>
+          <li>✔&nbsp; Key fob and smart key programming</li>
+          <li>✔&nbsp; Spare key duplication</li>
+          <li>✔&nbsp; Broken key extraction and ignition repair</li>
+          <li>✔&nbsp; Fob repair and battery replacement</li>
+          <li>✔&nbsp; Emergency lockout assistance</li>
+        </ul>
+        <a class="btn btn-primary" style="margin-top:2rem" href="#contact">Request Service</a>
+      </div>
+      <img src="img/p1.jpg" alt="Mobile car key workshop">
+    </div>
+    <div class="gallery">
+      <img src="img/p2.jpg" alt="Key cutting and programming equipment">
+      <img src="img/p3.jpg" alt="Dark Horse Promotions on the job">
+      <img src="img/hero.jpg" alt="Dark Horse Promotions technician" style="object-position:60% 20%">
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What Sets Us Apart</div>
+      <h2>Always Ready to Respond.</h2>
+      <p>When you're stranded, you need a car key service that shows up fast and gets it right the first time.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Rapid Mobile Response</h3>
+        <p>We come to you, wherever you may be, ensuring you're never stranded for long.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Expert Key Solutions</h3>
+        <p>From key replacements to fob programming, we handle all makes and models with precision.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Customer-First Commitment</h3>
+        <p>We prioritize convenience and security because your time and satisfaction matter to us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="careers" style="padding-top:0">
+  <div class="wrap">
+    <div class="careers">
+      <div>
+        <div class="eyebrow">Careers</div>
+        <h2>A Future That Opens Doors.</h2>
+        <p>We're building a team that thrives on challenges and craves growth. If you're ready to roll up your sleeves and make an impact in a fast-paced industry, we want you on our side.</p>
+      </div>
+      <div class="actions"><a class="btn btn-primary" href="#contact">Explore Careers</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta alt">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's Turn the Key.</h2>
+    <p>Getting back on the road shouldn't be a hassle. With fast, reliable mobile car key services, we bring expert solutions directly to you, wherever and whenever you need them.</p>
+    <form class="form" action="https://formsubmit.co/CONTACT_EMAIL_HERE" method="POST">
+      <div class="form-row">
+        <input name="name" placeholder="Your name" required>
+        <input name="phone" type="tel" placeholder="Phone number" required>
+      </div>
+      <input name="vehicle" placeholder="Vehicle (year, make, model)">
+      <textarea name="message" placeholder="How can we help? Tell us where you are and what you need."></textarea>
+      <input type="hidden" name="_subject" value="New request from darkhorsepromotions.com">
+      <input type="hidden" name="_captcha" value="false">
+      <button class="btn btn-primary" type="submit" style="justify-content:center">Send Request</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:1rem"><img src="img/logo-horse.jpg" alt=""><span>DARK HORSE<small>PROMOTIONS, INC.</small></span></a>
+        <p>Fast, reliable, on-the-spot mobile car key service. We're always ready to ride.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#careers">Careers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <a href="#contact">Request service online</a>
+        <a href="https://darkhorsepromotions.com">darkhorsepromotions.com</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Dark Horse Promotions, Inc. All Rights Reserved.</span>
+      <span>Mobile Car Key Replacement &amp; Programming</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
