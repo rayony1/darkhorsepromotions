@@ -184,7 +184,7 @@ PAGES["/"] = dict(
 <section class="hero pad">
   <div class="hero-copy">
     <h1><span>Learn a trade.</span> <span>Get paid</span> <span>to sell it.</span></h1>
-    <p>Dark Horse Promotions is a West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. We hire competitors, train them to cut, program, and sell car keys, then train them to lead.</p>
+    <p>Dark Horse Promotions is a West Houston sales and marketing firm representing Car Keys Express inside Costco and Sam's Club. We hire competitive people, train them to cut, program, and sell car keys, then train them to lead.</p>
     <div class="hero-actions">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
       <a class="link" href="/careers/">What the job looks like</a>
@@ -260,7 +260,7 @@ PAGES["/about/"] = dict(
   <div class="grid">
     <h2 class="section-title">Where reliability meets convenience.</h2>
     <div class="section-body">
-      <p>Dark Horse Promotions sets up inside Costco and Sam's Club warehouses on the west side of Houston, so replacing a lost key or adding a spare is something you do on a grocery run instead of a day off work. We represent Car Keys Express, the national leader in on-site key replacement.</p>
+      <p>Dark Horse Promotions sets up inside Costco and Sam's Club warehouses on the west side of Houston, so replacing a lost key or adding a spare is something you do on a grocery run instead of a day off work. We represent Car Keys Express, the nationwide on-site key replacement brand.</p>
       <p>The company is owned by Carter Bolser, who started as a technician himself. Every job is done on site by a trained team member with the equipment and the key inventory to finish it while you shop.</p>
     </div>
   </div>
@@ -367,7 +367,7 @@ PAGES["/services/"] = dict(
     <h2 class="section-title">Fast service, secure access.</h2>
     <p class="section-body">We carry the cutting machines, programmers, and a deep inventory of key blanks and fobs, so almost every vehicle can be handled on the spot with no ordering and no second trip.</p>
     <ul class="list">
-      <li><h3>Lost key replacement</h3><p>No original needed. We identify the key your vehicle takes, cut it, and program it to the car at your vehicle in the lot.</p></li>
+      <li><h3>Lost key replacement</h3><p>No original needed. We identify the key your vehicle takes, cut it, and program it to your car right in the lot.</p></li>
       <li><h3>Key fob and smart key programming</h3><p>Push-to-start, proximity, and remote fobs for domestic and import vehicles, programmed and tested before you drive off.</p></li>
       <li><h3>Spare key duplication</h3><p>A second key now costs far less than a replacement later. We recommend every driver keeps one.</p></li>
       <li><h3>Broken key extraction</h3><p>Snapped keys removed and replaced so you're not stuck with half a key.</p></li>
@@ -394,7 +394,7 @@ PAGES["/services/"] = dict(
     <ul class="claims">
       <li><h3>Dealership quality</h3><p>Same programming standards as the dealer, without the appointment, the tow, or the dealership price.</p></li>
       <li><h3>Straight pricing</h3><p>Quoted up front at the display. No hidden fees, no gimmicks.</p></li>
-      <li><h3>Membership required</h3><p>Service is available to Sam's Club and Costco members at the club we're currently in. Not a member? Ask about signing up at the front desk.</p></li>
+      <li><h3>Membership required</h3><p>Service is available to Sam's Club and Costco members at the club we're currently in. Bring your membership card.</p></li>
     </ul>
   </div>
 </section>
@@ -410,7 +410,7 @@ PAGES["/careers/"] = dict(
 <section class="page-hero with-photo pad">
   <div class="ph-copy">
     <h1>Let's unlock your potential.</h1>
-    <p>Your ambition has the key. Turn it at Dark Horse Promotions. We hire competitors, teach them a trade, and turn them into leaders.</p>
+    <p>Your ambition has the key. Turn it at Dark Horse Promotions. We hire competitive people, teach them a trade, and turn them into leaders.</p>
     <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
       <a class="link" href="#role">What the job looks like</a>
