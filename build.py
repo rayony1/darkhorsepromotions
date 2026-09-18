@@ -8,8 +8,8 @@ import os, pathlib
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://darkhorsepromotions.com"
 EMAIL = "carterscarkeys@gmail.com"
-PHONE_DISPLAY = "(409) 225-7079"
-PHONE_TEL = "+14092257079"
+PHONE_DISPLAY = "(502) 325-1109"
+PHONE_TEL = "+15023251109"
 FORM_ACTION = f"https://formsubmit.co/{EMAIL}"
 
 NAV = [
@@ -64,7 +64,7 @@ HEAD = """<!doctype html>
 """
 
 HIRING = """<div class="hiring">
-  <span><b>We're hiring.</b> Mobile car key technicians, no locksmith experience needed. We train you on the road.</span>
+  <span><b>We're hiring.</b> Car key technicians for our Sam's Club and Costco locations. No locksmith experience needed, we train you.</span>
   <a href="/careers/">See what the job looks like</a>
 </div>"""
 
@@ -73,7 +73,7 @@ FOOT = """</main>
   <div class="foot">
     <div>
       <a class="brand" href="/"><img src="/img/logo-dark.jpg" alt=""><span class="brand-name">Dark Horse<small>Promotions, Inc.</small></span></a>
-      <p>Mobile car key replacement, programming, and repair. We come to you. And we're building a team that does the same.</p>
+      <p>Car key replacement and programming inside Sam's Club and Costco. Call for this week's location. And we're hiring the team that runs them.</p>
     </div>
     <div>
       <h4>Company</h4>
@@ -88,9 +88,10 @@ FOOT = """</main>
       <a href="/contact/">Contact</a>
     </div>
     <div>
-      <h4>Reach Carter</h4>
+      <h4>Where we are this week</h4>
       <a class="big-link" href="tel:{tel}">{phone}</a>
       <a href="mailto:{email}">{email}</a>
+      <p style="margin-top:.5rem;font-size:.85rem">We set up inside a Sam's Club or Costco for a few weeks at a time. Call or text to find out which one.</p>
     </div>
   </div>
   <div class="copy">
@@ -102,7 +103,7 @@ FOOT = """</main>
 </html>
 """
 
-MARQUEE_ITEMS = ["Lost key replacement","Key fob programming","Smart key duplication","Broken key extraction","Ignition repair","Fob batteries","Emergency lockouts","All makes and models"]
+MARQUEE_ITEMS = ["Inside Sam's Club and Costco","Lost key replacement","Key fob programming","Smart key duplication","Broken key extraction","Fob batteries","Done in minutes while you shop","All makes and models"]
 def marquee():
     a = "".join(f"<span>{i}</span>" for i in MARQUEE_ITEMS)
     b = "".join(f'<span class="dup">{i}</span>' for i in MARQUEE_ITEMS)
@@ -147,7 +148,7 @@ def contact_form():
     <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" required></div>
   </div>
   <div class="field"><label for="c-vehicle">Vehicle</label><input id="c-vehicle" name="vehicle" placeholder="Year, make, model"></div>
-  <div class="field"><label for="c-msg">What do you need?</label><textarea id="c-msg" name="message" placeholder="Where you are and what happened"></textarea></div>
+  <div class="field"><label for="c-msg">What do you need?</label><textarea id="c-msg" name="message" placeholder="What happened to the key, and which club is closest to you"></textarea></div>
   {CONSENT.format(purpose="your request")}
   <input type="hidden" name="_subject" value="New service request from darkhorsepromotions.com">
   <input type="hidden" name="_template" value="table">
@@ -161,7 +162,7 @@ def careers_cta(cls="careers-band"):
   <div class="grid">
     <h2>A future that opens doors.</h2>
     <div class="aside">
-      <p>We're building a team that thrives on challenges and craves growth. If you're ready to roll up your sleeves and make an impact in a fast-paced industry, we want you on our side.</p>
+      <p>We're building a team that thrives on challenges and craves growth. If you can talk to anyone, learn fast, and want a trade that pays, we want you on our side.</p>
       <div class="actions">
         <a class="btn btn-orange" href="/apply/">Apply now</a>
         <a class="btn btn-line" href="/careers/">Learn about the role</a>
@@ -173,9 +174,22 @@ def careers_cta(cls="careers-band"):
 # ------------------------------------------------------------------ pages
 PAGES = {}
 
+FIND_US = f"""<section class="light-2 pad" id="find-us">
+  <div class="grid">
+    <h2 class="section-title">Where to find us.</h2>
+    <div class="section-body">
+      <p>We set up inside a Sam's Club or Costco warehouse for a few weeks at a time, then move to the next one. Call or text for this week's location and hours. A club membership is required for service.</p>
+      <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.75rem">
+        <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+        <a class="btn btn-line" href="sms:{PHONE_TEL}">Text us</a>
+      </div>
+    </div>
+  </div>
+</section>"""
+
 PAGES["/"] = dict(
-    title="Dark Horse Promotions, Inc. | Mobile Car Key Service and Careers",
-    desc="Dark Horse Promotions cuts, replaces, and programs car keys on the spot, wherever you are. We're also hiring mobile car key technicians.",
+    title="Dark Horse Promotions, Inc. | Car Key Replacement at Sam's Club and Costco",
+    desc="Dark Horse Promotions replaces and programs car keys inside Sam's Club and Costco while you shop. Call for this week's location. We're also hiring technicians.",
     hiring=True,
     body=f"""
 <section class="hero pad">
@@ -183,21 +197,21 @@ PAGES["/"] = dict(
     <h1>
       <span>Lost your</span>
       <span>car key?</span>
-      <span><i class="rule" aria-hidden="true"></i>We come</span>
-      <span>to you.</span>
+      <span><i class="rule" aria-hidden="true"></i>Find us</span>
+      <span>at the club.</span>
     </h1>
-    <p>Dark Horse Promotions cuts, replaces, and programs car keys on the spot, wherever you're stranded. Every make, every model, same day.</p>
+    <p>Dark Horse Promotions cuts and programs replacement car keys inside Sam's Club and Costco. Stop by while you shop, and leave with a working key in minutes. Every make, every model.</p>
     <div class="hero-actions">
-      <a class="btn btn-orange" href="/contact/">Request service</a>
-      <a class="btn btn-line" href="/services/">What we do</a>
+      <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call for this week's location</a>
+      <a class="btn btn-line" href="/services/">How it works</a>
     </div>
   </div>
   <div class="hero-photo">
-    <img src="/img/hero.jpg" alt="Carter Bolser standing in the door of the Dark Horse Promotions mobile key van" fetchpriority="high">
+    <img src="/img/hero.jpg" alt="Carter Bolser standing in the door of the Dark Horse Promotions key service van" fetchpriority="high">
   </div>
   <aside class="hero-note">
     <b>Now hiring technicians</b>
-    Drive, learn a real trade, and get paid to keep people moving. No locksmith background required.
+    Run a key display inside the biggest warehouse clubs in the country. No locksmith background required.
     <a href="/careers/">See the role</a>
   </aside>
 </section>
@@ -206,37 +220,34 @@ PAGES["/"] = dict(
   <div class="grid">
     <h2 class="section-title">Unlocking convenience, one key at a time.</h2>
     <div class="section-body">
-      <p>Dark Horse Promotions, Inc. provides fast, reliable mobile car key solutions. Whether you need a key replacement or advanced programming, we've got you covered, and we do it where your car is parked.</p>
+      <p>Dark Horse Promotions, Inc. provides fast, reliable car key replacement and programming at the warehouse clubs you already shop at. Whether you need a spare or lost your only key, we've got you covered, and you're done before your cart is full.</p>
       <a class="btn btn-line" href="/about/">About the company</a>
     </div>
     <ul class="statements">
-      <li><h3>Convenient key replacements</h3><p>Lost or broken key? We cut and program a new one wherever you are, so you're not waiting on a tow or a dealership appointment.</p></li>
-      <li><h3>Cost-effective rates</h3><p>Mobile service saves you more than most dealerships charge. Expert work at a fraction of the cost.</p></li>
-      <li><h3>Fob programming and repairs</h3><p>From reprogramming to battery replacement, your key fob leaves working flawlessly so you can get back on the road.</p></li>
+      <li><h3>Keys while you shop</h3><p>Stop by the display, hand us your vehicle info, and finish your shopping. The key is cut, programmed, and tested at your car in the lot.</p></li>
+      <li><h3>Save against the dealership</h3><p>No appointment, no tow, no dealership markup. Members typically pay far less than the dealer quotes for the same key.</p></li>
+      <li><h3>Fob programming and repairs</h3><p>From reprogramming to battery replacement, your key fob leaves working flawlessly.</p></li>
     </ul>
   </div>
 </section>
 <section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">Everything your key needs, on site.</h2>
-    <div class="section-body">
-      <p>A fully equipped mobile workshop pulls up to you. Cutting, programming, and repairs are all done on the spot, usually the same day you call.</p>
-      <a class="btn btn-line" href="/services/">All services</a>
-    </div>
-    <ul class="list">
-      <li><h3>Lost key replacement</h3><p>No original needed. We cut a new key from your vehicle's specification and program it to the car.</p></li>
-      <li><h3>Key fob and smart key programming</h3><p>Push-to-start, proximity, and remote fobs for domestic and import vehicles.</p></li>
-      <li><h3>Broken key extraction and ignition repair</h3><p>Snapped keys pulled from doors and ignitions, and worn ignitions repaired in place.</p></li>
-      <li><h3>Emergency lockouts</h3><p>Locked out with the keys inside? We open the vehicle without damage.</p></li>
-    </ul>
+    <h2 class="section-title">How it works.</h2>
+    <p class="section-body">Four steps, and most members are done in the time it takes to shop.</p>
+    <ol class="steps">
+      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We rotate between Sam's Club and Costco warehouses. Call or text to find out where we are this week.</p></li>
+      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes.</p></li>
+      <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
+      <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
+    </ol>
   </div>
 </section>
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">On the job.</h2>
-    <p class="section-body">Real work, real people. The team shows up in the van, does the job right, and leaves you holding a working key.</p>
+    <p class="section-body">Real work, real people. The team sets up, takes care of members all day, and sends every one of them home with a working key.</p>
     <div class="photos">
-      <figure class="big"><img src="/img/p2.jpg" alt="Technician programming a key at the bench inside the van"><figcaption>Cutting and programming, done in the van</figcaption></figure>
+      <figure class="big"><img src="/img/p2.jpg" alt="Technician programming a key at the equipment bench"><figcaption>Cutting and programming, done on site</figcaption></figure>
       <figure class="a"><img src="/img/p1.jpg" alt="The Dark Horse Promotions team at an industry event"></figure>
       <figure class="b"><img src="/img/p3.jpg" alt="The team at a trade show"></figure>
     </div>
@@ -244,45 +255,46 @@ PAGES["/"] = dict(
 </section>
 <section class="dark pad">
   <div class="grid">
-    <h2 class="section-title">Why people call us, and why people work here.</h2>
-    <p class="section-body">When you're stranded, you need a car key service that shows up fast and gets it right the first time. The same standard applies to how we treat the people on our team.</p>
+    <h2 class="section-title">Why members trust us, and why people work here.</h2>
+    <p class="section-body">A lost key is a bad day. We fix it fast, at a fair price, with a technician who knows the vehicle. The same standard applies to how we treat the people on our team.</p>
     <ul class="claims">
-      <li><h3>Rapid mobile response</h3><p>We come to you, wherever you may be, so you're never stranded for long.</p></li>
+      <li><h3>Done in minutes</h3><p>Most keys are cut, programmed, and tested before you finish shopping.</p></li>
       <li><h3>Expert key solutions</h3><p>From replacements to fob programming, we handle all makes and models with precision.</p></li>
-      <li><h3>Customer first</h3><p>We prioritize convenience and security because your time and satisfaction matter.</p></li>
+      <li><h3>Member first</h3><p>Straight pricing, no pressure, and a working key before you pay.</p></li>
     </ul>
   </div>
 </section>
+{FIND_US}
 {careers_cta()}
 """)
 
 PAGES["/about/"] = dict(
     title="About | Dark Horse Promotions, Inc.",
-    desc="Dark Horse Promotions is a mobile car key company built on reliability, transparency, and a team that shows up.",
+    desc="Dark Horse Promotions runs car key replacement displays inside Sam's Club and Costco, built on reliability, transparency, and a team that shows up.",
     hiring=True,
     body=f"""
 <section class="page-hero pad">
   <span class="kicker">About us</span>
   <h1>We are Dark Horse Promotions.</h1>
-  <p>When you need a key, we're the ones to call. Our mobile car key service brings fast, reliable solutions to wherever your car is parked, any time.</p>
+  <p>When you need a key, we're the ones to call. We bring dealership-quality key replacement into the warehouse clubs you already shop at, at prices that make sense.</p>
 </section>
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Where reliability meets convenience.</h2>
     <div class="section-body">
-      <p>Life moves fast, and so do we. Dark Horse Promotions makes sure you're never stranded. Whether you need a replacement key, fob programming, or ignition repair and key extraction, we bring expert solutions directly to you.</p>
-      <p>The company is led by Carter Bolser and operates a fully equipped mobile workshop. Every job is done on site, by a technician who has the tools and the training to finish it in one visit.</p>
+      <p>Life moves fast, and so do we. Dark Horse Promotions sets up inside Sam's Club and Costco warehouses, so replacing a lost key or adding a spare is something you do on a grocery run instead of a day off work.</p>
+      <p>The company is led by Carter Bolser. Every job is done on site by a trained technician with the equipment and the key inventory to finish it while you shop.</p>
     </div>
   </div>
 </section>
 <section class="dark pad">
   <div class="grid">
     <h2 class="section-title">What guides us.</h2>
-    <p class="section-body">Our commitment is built on expertise, reliability, and customer-first service.</p>
+    <p class="section-body">Our commitment is built on expertise, reliability, and member-first service.</p>
     <ul class="statements">
-      <li><h3>Our mission</h3><p>We exist to keep you moving. Fast, professional, hassle-free mobile car key service, whenever and wherever you need it.</p></li>
-      <li><h3>Our vision</h3><p>A world where lost keys never mean lost time. Expert workmanship plus mobile convenience is changing how drivers get reliable key service.</p></li>
-      <li><h3>Our culture</h3><p>Precision, urgency, and trust. The team solves problems so every customer gets back on the road with confidence.</p></li>
+      <li><h3>Our mission</h3><p>We exist to keep you moving. Fast, professional, hassle-free key replacement, in the places you already go.</p></li>
+      <li><h3>Our vision</h3><p>A world where lost keys never mean lost time. Expert workmanship plus real convenience is changing how drivers get reliable key service.</p></li>
+      <li><h3>Our culture</h3><p>Precision, urgency, and trust. The team solves problems so every member gets back on the road with confidence.</p></li>
     </ul>
   </div>
 </section>
@@ -291,8 +303,8 @@ PAGES["/about/"] = dict(
     <h2 class="section-title">The keys to our success.</h2>
     <p class="section-body">Great service is built on strong principles, and we stand by them every day.</p>
     <ul class="statements four">
-      <li><h3>Reliability first</h3><p>We show up when you need us most: fast, equipped, and ready to solve the problem on the spot.</p></li>
-      <li><h3>Customer-centric service</h3><p>Your convenience is the priority. From replacements to reprogramming, the process is seamless and stress-free.</p></li>
+      <li><h3>Reliability first</h3><p>We show up equipped and ready, every day the display is open.</p></li>
+      <li><h3>Member-centric service</h3><p>Your convenience is the priority. From replacements to reprogramming, the process is seamless and stress-free.</p></li>
       <li><h3>Trust and transparency</h3><p>No hidden fees, no gimmicks. Honest pricing and expert work you can count on.</p></li>
       <li><h3>Continuous improvement</h3><p>Vehicle technology evolves, and so do we. We stay current on programming and security so we can serve you better.</p></li>
     </ul>
@@ -311,7 +323,7 @@ PAGES["/about/"] = dict(
 
 PAGES["/team/"] = dict(
     title="Team | Dark Horse Promotions, Inc.",
-    desc="Meet the people behind Dark Horse Promotions, a mobile car key team led by Carter Bolser.",
+    desc="Meet the people behind Dark Horse Promotions, a car key team led by Carter Bolser.",
     hiring=True,
     body=f"""
 <section class="page-hero pad">
@@ -322,13 +334,13 @@ PAGES["/team/"] = dict(
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Driven by dedication, powered by reliability.</h2>
-    <p class="section-body">We do more than replace keys. We restore access and peace of mind. The team is committed to fast, precise, professional mobile car key service, and no challenge on the road is one we haven't seen.</p>
+    <p class="section-body">We do more than replace keys. We restore access and peace of mind. The team is committed to fast, precise, professional key service, and there isn't a vehicle that rolls into the lot we haven't seen.</p>
     <div class="person">
       <img src="/img/hero.jpg" alt="Carter Bolser">
       <div>
         <h3>Carter Bolser</h3>
         <span class="role">Owner, Dark Horse Promotions, Inc.</span>
-        <p>Carter runs Dark Horse Promotions and is the technician you're most likely to meet in the van. He built the company around a simple promise: show up fast, do the job right the first time, and treat every customer like a neighbor.</p>
+        <p>Carter runs Dark Horse Promotions and is the technician you're most likely to meet at the display. He built the company around a simple promise: be there, do the job right the first time, and treat every member like a neighbor.</p>
         <p>He's now hiring and training the next technicians on the team, and he answers the phone himself.</p>
         <div class="contact-lines">
           <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
@@ -351,7 +363,7 @@ PAGES["/team/"] = dict(
   <div class="grid">
     <h2>Unlock more access.</h2>
     <div class="aside">
-      <p>Lost or broken keys shouldn't slow you down. We bring fast, expert mobile car key solutions wherever and whenever you need them.</p>
+      <p>Lost or broken keys shouldn't slow you down. Find us inside Sam's Club or Costco and leave with a working key.</p>
       <a class="btn btn-line" href="/services/">Discover our services</a>
     </div>
   </div>
@@ -359,62 +371,65 @@ PAGES["/team/"] = dict(
 """)
 
 PAGES["/services/"] = dict(
-    title="Services | Dark Horse Promotions, Inc.",
-    desc="Mobile car key replacement, fob programming, key extraction, ignition repair, and lockouts. Done on site by Dark Horse Promotions.",
+    title="Services | Car Key Replacement at Sam's Club and Costco | Dark Horse Promotions",
+    desc="Lost key replacement, fob and smart key programming, spares, extraction, and fob repair, done inside Sam's Club and Costco while you shop.",
     hiring=True,
     body=f"""
 <section class="page-hero with-photo pad">
   <div class="ph-copy">
     <span class="kicker">Services</span>
-    <h1>A car key service that works as hard as you do.</h1>
-    <p>You're always on the go, and your car key service should be too. Fast, reliable mobile solutions so you can get back on the road without the hassle.</p>
+    <h1>A car key service that fits inside your errands.</h1>
+    <p>You're already at the club. Stop by the display, and by the time you've checked out, your new key is cut, programmed, and tested.</p>
+    <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
+      <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call for this week's location</a>
+    </div>
   </div>
-  <div class="ph-img"><img src="/img/p2.jpg" alt="Key programming equipment inside the mobile workshop"></div>
+  <div class="ph-img"><img src="/img/p2.jpg" alt="Key programming equipment"></div>
 </section>
 {marquee()}
 <section class="light pad">
   <div class="grid">
     <h2 class="section-title">Fast service, secure access.</h2>
-    <p class="section-body">When you need a new key or fob service, we bring the solution to you. The van carries the cutting machines, programmers, and blanks, so nothing has to be towed to a dealership.</p>
+    <p class="section-body">We carry the cutting machines, programmers, and a deep inventory of key blanks and fobs, so almost every vehicle can be handled on the spot with no ordering and no second trip.</p>
     <ul class="list">
-      <li><h3>Lost key replacement</h3><p>No original needed. We cut a new key from your vehicle's specification and program it to the car on the spot.</p></li>
-      <li><h3>Key fob and smart key programming</h3><p>Push-to-start, proximity, and remote fobs for domestic and import vehicles, programmed and tested before we leave.</p></li>
+      <li><h3>Lost key replacement</h3><p>No original needed. We identify the key your vehicle takes, cut it, and program it to the car at your vehicle in the lot.</p></li>
+      <li><h3>Key fob and smart key programming</h3><p>Push-to-start, proximity, and remote fobs for domestic and import vehicles, programmed and tested before you drive off.</p></li>
       <li><h3>Spare key duplication</h3><p>A second key now costs far less than a replacement later. We recommend every driver keeps one.</p></li>
-      <li><h3>Broken key extraction and ignition repair</h3><p>Snapped keys pulled from doors and ignitions, and worn ignitions repaired without replacing the whole assembly.</p></li>
+      <li><h3>Broken key extraction</h3><p>Snapped keys removed and replaced so you're not stuck with half a key.</p></li>
       <li><h3>Fob repair and batteries</h3><p>Dead buttons, cracked shells, and low batteries fixed while you wait.</p></li>
-      <li><h3>Emergency lockouts</h3><p>Locked out with the keys inside? We open the vehicle without damage.</p></li>
     </ul>
   </div>
 </section>
 <section class="dark pad">
   <div class="grid">
+    <h2 class="section-title">How it works.</h2>
+    <p class="section-body">Four steps, and most members are done in the time it takes to shop.</p>
+    <ol class="steps">
+      <li><div class="n">Step 1</div><h3>Call for the location</h3><p>We rotate between Sam's Club and Costco warehouses. Call or text to find out where we are this week.</p></li>
+      <li><div class="n">Step 2</div><h3>Stop by the display</h3><p>Bring your membership card and your vehicle. We look up exactly which key your car takes and quote it up front.</p></li>
+      <li><div class="n">Step 3</div><h3>We cut and program</h3><p>The technician cuts the key and programs the fob or smart key at your vehicle in the parking lot.</p></li>
+      <li><div class="n">Step 4</div><h3>Test before you leave</h3><p>Lock, unlock, start. You watch it work before you pay.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="light pad">
+  <div class="grid">
     <h2 class="section-title">Reliable solutions to keep you moving.</h2>
-    <p class="section-body">We prioritize reliability, transparency, and expert craftsmanship. You'll know the price before we start, and you'll have a working key before we go.</p>
+    <p class="section-body">We prioritize reliability, transparency, and expert craftsmanship. You'll know the price before we start, and you'll have a working key before we're done.</p>
     <ul class="claims">
-      <li><h3>We come to you</h3><p>Home, work, the grocery store parking lot. Wherever the car is, that's where the job gets done.</p></li>
-      <li><h3>Dealership quality</h3><p>Same programming standards, without the appointment, the tow, or the dealership price.</p></li>
-      <li><h3>Straight pricing</h3><p>Quoted up front. No hidden fees, no gimmicks.</p></li>
+      <li><h3>Dealership quality</h3><p>Same programming standards as the dealer, without the appointment, the tow, or the dealership price.</p></li>
+      <li><h3>Straight pricing</h3><p>Quoted up front at the display. No hidden fees, no gimmicks.</p></li>
+      <li><h3>Membership required</h3><p>Service is available to Sam's Club and Costco members at the club we're currently in. Not a member? Ask about signing up at the front desk.</p></li>
     </ul>
   </div>
 </section>
-<section class="light-2 cta-band pad">
-  <div class="grid">
-    <h2>Need a key today?</h2>
-    <div class="aside">
-      <p>Call or text Carter directly, or send a request and we'll confirm a time.</p>
-      <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.5rem">
-        <a class="btn btn-orange" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
-        <a class="btn btn-line" href="/contact/">Request service</a>
-      </div>
-    </div>
-  </div>
-</section>
+{FIND_US}
 {careers_cta()}
 """)
 
 PAGES["/careers/"] = dict(
-    title="Careers | Mobile Car Key Technician | Dark Horse Promotions, Inc.",
-    desc="Join Dark Horse Promotions as a mobile car key technician. Learn a trade on the road, work independently, and grow with a company that's expanding.",
+    title="Careers | Car Key Technician at Sam's Club and Costco | Dark Horse Promotions, Inc.",
+    desc="Join Dark Horse Promotions as a car key technician running displays inside Sam's Club and Costco. No locksmith experience needed. We train you.",
     hiring=False,
     body=f"""
 <section class="page-hero with-photo pad">
@@ -422,7 +437,7 @@ PAGES["/careers/"] = dict(
     <span class="kicker">Careers</span>
     <h1>Let's unlock your potential.</h1>
     <p>Your ambition has the key. Turn it at Dark Horse Promotions. We don't just open doors to opportunity, we help you break them down.</p>
-    <div class="hero-actions" style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
+    <div style="margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap">
       <a class="btn btn-orange" href="/apply/">Apply now</a>
       <a class="btn btn-line" href="#role">What the job looks like</a>
     </div>
@@ -434,19 +449,19 @@ PAGES["/careers/"] = dict(
     <h2 class="section-title">Your hustle. Your growth. Your future.</h2>
     <div class="section-body">
       <p>Our success comes from dedication, determination, and an unstoppable work ethic. We're looking for driven, dependable people to join us. If you love tackling challenges head-on and want to grow personally and professionally, you'll fit right in.</p>
-      <p>You don't need a locksmith background. You need to show up, learn fast, and care about the person standing next to their car.</p>
+      <p>You don't need a locksmith background. You need to show up, talk to people, learn fast, and care about the member standing in front of you.</p>
     </div>
   </div>
 </section>
 <section id="role" class="dark pad">
   <div class="grid">
     <h2 class="section-title">What the job looks like.</h2>
-    <p class="section-body">You're a mobile car key technician. Your office is a fully stocked van, and your day is a route of people who need to get moving again.</p>
+    <p class="section-body">You're a car key technician running our display inside a Sam's Club or Costco. Thousands of members walk past you every day, and a lot of them need a key.</p>
     <ul class="list">
-      <li><h3>Drive to the customer</h3><p>Every job is on location: driveways, parking lots, dealerships, and roadside. You plan the route and show up on time.</p></li>
-      <li><h3>Cut and program keys</h3><p>Using the equipment in the van, you cut the key, program the fob or smart key, and test it on the vehicle before you leave.</p></li>
-      <li><h3>Solve the hard ones</h3><p>Broken key extractions, ignition repairs, and lockouts. The problems that make the day interesting.</p></li>
-      <li><h3>Take care of people</h3><p>Customers are usually having a bad day when they call. You're the person who turns it around, and you do it with patience and respect.</p></li>
+      <li><h3>Run the display</h3><p>Set up in the morning, keep the display sharp, and be the face of the operation for every member who stops.</p></li>
+      <li><h3>Talk to members</h3><p>Most people don't know a replacement key can be done here. You explain it, look up their vehicle, and quote it on the spot.</p></li>
+      <li><h3>Cut and program keys</h3><p>Using the equipment on site, you cut the key, program the fob or smart key at the member's vehicle, and test it before they leave.</p></li>
+      <li><h3>Move with the show</h3><p>Displays run at a club for a few weeks, then move to the next one. You'll work different clubs, and sometimes travel.</p></li>
     </ul>
   </div>
 </section>
@@ -455,10 +470,10 @@ PAGES["/careers/"] = dict(
     <h2 class="section-title">Who does well here.</h2>
     <p class="section-body">The trade can be taught. These can't.</p>
     <ul class="statements four">
-      <li><h3>Self-starters</h3><p>You'll work independently most of the day. Nobody is standing over your shoulder, and nobody should need to.</p></li>
+      <li><h3>People people</h3><p>You're comfortable starting a conversation with a stranger and making them feel taken care of. This is a sales job as much as a technical one.</p></li>
+      <li><h3>Self-starters</h3><p>You'll run the display on your own most days. Nobody is standing over your shoulder, and nobody should need to.</p></li>
       <li><h3>Problem solvers</h3><p>Every vehicle is a little different. You like figuring things out and finishing what you start.</p></li>
-      <li><h3>People people</h3><p>You're comfortable talking to strangers and making them feel taken care of.</p></li>
-      <li><h3>Clean drivers</h3><p>You'll be behind the wheel of a company van every day. A valid license and a clean record are required.</p></li>
+      <li><h3>Reliable and mobile</h3><p>You show up on time every day the display is open, and you're open to working different clubs and traveling when the show moves.</p></li>
     </ul>
   </div>
 </section>
@@ -468,17 +483,30 @@ PAGES["/careers/"] = dict(
     <p class="section-body">Four steps, and we move quickly. Most people hear back within a couple of days.</p>
     <ol class="steps">
       <li><div class="n">Step 1</div><h3>Apply</h3><p>Send the short form. A resume helps but isn't required.</p></li>
-      <li><div class="n">Step 2</div><h3>Talk with Carter</h3><p>A phone call to hear your story and answer your questions about the work.</p></li>
-      <li><div class="n">Step 3</div><h3>Ride along</h3><p>Spend time in the van on real jobs so you can see the work before you commit.</p></li>
-      <li><div class="n">Step 4</div><h3>Start training</h3><p>Learn cutting, programming, and customer service hands-on, then run your own route.</p></li>
+      <li><div class="n">Step 2</div><h3>Talk with Carter</h3><p>A phone call to hear your story, answer your questions, and talk about pay and schedule.</p></li>
+      <li><div class="n">Step 3</div><h3>Shadow at the club</h3><p>Spend a day at the display on real jobs so you can see the work before you commit.</p></li>
+      <li><div class="n">Step 4</div><h3>Start training</h3><p>Learn key cutting, programming, and how to talk to members, hands-on, then run your own display.</p></li>
     </ol>
+  </div>
+</section>
+<section class="light pad">
+  <div class="grid">
+    <h2 class="section-title">Questions people ask.</h2>
+    <p class="section-body">Straight answers. Anything else, ask Carter on the call.</p>
+    <ul class="list">
+      <li><h3>Do I need locksmith or automotive experience?</h3><p>No. We train you on the equipment and the vehicles. Sales or customer-facing experience helps more than a toolbox.</p></li>
+      <li><h3>Where will I work?</h3><p>Inside Sam's Club and Costco warehouses. Displays run at one club for a few weeks, then move. Ask Carter about the current rotation and how far it reaches.</p></li>
+      <li><h3>What are the hours?</h3><p>Displays are open during club hours, so the schedule follows the roadshow calendar. Carter will walk you through the current schedule.</p></li>
+      <li><h3>Is there travel?</h3><p>Sometimes. When the show moves to a club out of town, so does the team. If you like seeing new places, it's a perk.</p></li>
+      <li><h3>How am I paid?</h3><p>Pay is discussed on the first call. Bring your questions.</p></li>
+    </ul>
   </div>
 </section>
 <section class="careers-band pad">
   <div class="grid">
     <h2>Ready to take the wheel?</h2>
     <div class="aside">
-      <p>Your next opportunity is a few steps away. Send your details and Carter will reach out. Or skip the form and call <a href="tel:{PHONE_TEL}" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">{PHONE_DISPLAY}</a>.</p>
+      <p>Your next opportunity is a few steps away. Send your details and Carter will reach out. Or skip the form and call or text <a href="tel:{PHONE_TEL}" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">{PHONE_DISPLAY}</a>.</p>
       <div class="actions">
         <a class="btn btn-orange" href="/apply/">Apply now</a>
       </div>
@@ -489,19 +517,19 @@ PAGES["/careers/"] = dict(
 
 PAGES["/apply/"] = dict(
     title="Apply | Dark Horse Promotions, Inc.",
-    desc="Apply to join Dark Horse Promotions as a mobile car key technician. Upload your resume and Carter will reach out.",
+    desc="Apply to join Dark Horse Promotions as a car key technician at Sam's Club and Costco. Upload your resume and Carter will reach out.",
     hiring=False,
     body=f"""
 <section class="page-hero pad">
   <span class="kicker">Apply</span>
   <h1>Join the drive for success.</h1>
-  <p>Ready to take the wheel on a rewarding career? Become part of Dark Horse Promotions and help drivers get back on the road with fast, reliable mobile car key service.</p>
+  <p>Ready to take the wheel on a rewarding career? Become part of Dark Horse Promotions and help members walk out of the club with a working key.</p>
 </section>
 <section class="light pad">
   <div class="grid">
     <div class="form-title">
       <h2>Let's move forward together.</h2>
-      <p>Complete the application and take the first step toward a career in mobile car key service. Carter reads every one.</p>
+      <p>Complete the application and take the first step. Carter reads every one.</p>
       <div class="direct">
         <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}<small>Prefer to talk? Call or text.</small></a>
         <a href="mailto:{EMAIL}?subject=Application">{EMAIL}<small>Or email your resume directly.</small></a>
@@ -523,21 +551,21 @@ PAGES["/apply/"] = dict(
 
 PAGES["/contact/"] = dict(
     title="Contact | Dark Horse Promotions, Inc.",
-    desc="Need a car key replaced, programmed, or repaired? Contact Dark Horse Promotions. We come to you.",
+    desc="Find Dark Horse Promotions inside Sam's Club or Costco this week. Call or text for the current location, or send a request.",
     hiring=True,
     body=f"""
 <section class="page-hero pad">
   <span class="kicker">Contact</span>
   <h1>Your key to more possibilities.</h1>
-  <p>Need a key, have a question, or ready to take the next step? We're here to help you get back on the road.</p>
+  <p>Need a key, have a question, or ready to take the next step? Call or text and we'll tell you which club we're in this week.</p>
 </section>
 <section class="dark pad">
   <div class="grid">
     <div class="form-title">
       <h2>Let's turn the key.</h2>
-      <p>Tell us where you are and what you drive. We'll confirm a time and come to you.</p>
+      <p>Fastest way: call or text. Or send the form and we'll get back to you with our current location and a quote.</p>
       <div class="direct">
-        <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}<small>Fastest for same-day service. Call or text.</small></a>
+        <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}<small>Call or text for this week's location and hours.</small></a>
         <a href="mailto:{EMAIL}">{EMAIL}<small>For quotes and everything else.</small></a>
         <a href="/apply/">Looking to work with us?<small>Applications go through the apply page.</small></a>
       </div>
@@ -545,6 +573,7 @@ PAGES["/contact/"] = dict(
     {contact_form()}
   </div>
 </section>
+{FIND_US}
 """)
 
 PAGES["/thanks/"] = dict(
@@ -581,7 +610,7 @@ PAGES["/privacy/"] = dict(
       <p>Only what you type into our forms or send us directly: your name, phone number, email, location, vehicle details, your message, and any resume you attach.</p>
       <h2>How we use it</h2>
       <ul>
-        <li>To respond to service requests and schedule appointments.</li>
+        <li>To respond to service questions and tell you where we are.</li>
         <li>To review job applications and contact applicants about employment.</li>
         <li>To send text messages or calls about your request or application, if you gave us your number.</li>
       </ul>
